@@ -1,0 +1,18 @@
+[
+  {
+    "Membership_Number": "135275",
+    "First_name": "xinyi",
+    "Last_name": "low",
+    "Address": [
+      "No 16050 ",
+      "Jalan Camar 11",
+      "Kulai"
+    ],
+    "Postcode": "83000",
+    "Sex": "M",
+    "Date_of_birth": "2000-11-11",
+    "Join_Date": "2017-01-03",
+    "Type_of_membership": "F",
+    "Subscription_Due_Month": "Jan"
+  }
+]
