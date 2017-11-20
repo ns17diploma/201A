@@ -9,6 +9,7 @@ $(function(){
 
 	$('#submit').click(function(){
 		checkEmpty()
+		checkError()
 		if ($('body *').hasClass('error') || result === false) {
 			alert("Please fulfil your form correctly!")
 			return false
@@ -144,6 +145,15 @@ $(function(){
 				return result = true
 			}
 		})
+	}
+
+	function checkError() {
+		let joinDate = ($('#join-date').val()).substr(0,4)
+		let birthDate = ($('#birth').val()).substr(0,4)
+		if (Number(joinDate) >= Number(birthDate)) {
+			$('#join-date-error').show()
+			$('#join-date').parent().addClass('error');
+		}
 	}
 
 	function addMember() {
