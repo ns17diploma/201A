@@ -1,0 +1,15 @@
+
+table tr td{
+	font-weight: bold;
+	border: 2px solid black;
+	padding: 5px 5px 5px 5px;
+}
+
+table tr th{
+	font-weight: bold;
+	border: 2px solid black;
+}
+
+body{
+	background-color: #B0E0E6;	
+}

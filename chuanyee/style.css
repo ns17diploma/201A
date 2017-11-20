@@ -1,0 +1,184 @@
+
+body{
+	background-color: #B0E0E6;
+}
+
+#header{
+	margin-top: 30px;
+	margin-left: 50px;
+	font-size: 40px;
+}
+
+#membership{
+	width: 500px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#title01{
+	margin-top: 50px;
+	font-size: 16px;
+	margin-left: 50px;
+}
+
+
+#firstname{
+	width: 500px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#fname{
+	margin-top: -23px;
+}
+
+#title02{
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+#lastname{
+	width: 500px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#lname{
+	margin-top: -20px;
+}
+
+#title03{
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+#address{
+	width: 500px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#add{
+	margin-top: -20px;
+}
+
+#title04{
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+#postcode{
+	width: 200px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#pcode{
+	margin-top: -20px;
+}
+
+#title05{
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+#sexual{
+	width: 200px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#sex{
+	margin-top: -502px;
+	margin-left: 380px;
+}
+
+#title06{
+	margin-top: 40px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+#date{
+	width: 400px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#dotb{
+	margin-top: -20px;
+	margin-left: 380px;
+}
+
+#title07{
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+#joindate{
+	width: 400px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#jd{
+	margin-top: -20px;
+	margin-left: 380px;
+}
+
+#title08{
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+#typeof{
+	width: 400px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#toms{
+	margin-top: -20px;
+	margin-left: 380px;
+}
+
+#title09{
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+#month{
+	width: 400px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#sdm{
+	margin-top: -20px;
+	margin-left: 380px;
+}
+
+#title10{
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 16px;
+}
+
+
+#save{
+	margin-left: 460px;
+	margin-top: 20px;
+	width: 120px;
+}
+
+#save button{
+	height: 40px;
+}
+
