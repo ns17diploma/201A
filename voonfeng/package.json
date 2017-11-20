@@ -1,0 +1,11 @@
+{
+  "name": "json",
+  "version": "1.0.0",
+  "description": "json",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC"
+}
