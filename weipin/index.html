@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Member_Form</title>
+		<link rel="stylesheet" href="node_modules/semantic-ui/dist/semantic.min.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body onload="error()">
+		<section id="container">
+			<h1 id="title">MEMBER_FORM</h1>
+			<form class="ui form">
+				<div class="two fields">
+					<div class="field">
+						<span>
+							<label for="membershipNumber">&nbsp;Membership_Number</label>
+							<a class="error mnError00">&nbsp;Invalid input</a>
+						</span>
+						<input id="membershipNumber" type="text" name="MembershipNumber" required="" placeholder="Membership_Number" value="">
+					</div>
+				
+					<div class="field">
+						<span>
+							<label for="joinDate">&nbsp;Join_Date</label>
+							<a class="error joinError00">&nbsp;Invalid input</a>
+						</span>
+						<input id="joinDate" type="date" name="joinDate" placeholder="Join_Date">
+					</div>
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<span>
+							<label for="firstName">&nbsp;First Name</label>
+							<a class="error fnError00">&nbsp;Invalid input</a>
+						</span>
+						<input id="firstName" type="text" name="first-name" required="" placeholder="First Name" value="">
+					</div>
+			
+					<div class="field">
+						<span>
+							<label for="lastName">&nbsp;Last Name</label>
+							<a class="error lnError00">&nbsp;Invalid input</a>			
+						</span>
+						<input id="lastName" type="text" name="last-name" required="" placeholder="Last Name" value="">
+					</div>
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<span>
+							<label for="birth">&nbsp;Date_of_Birth</label>
+							<a class="error birthError00">&nbsp;Invalid input</a>
+						</span>
+						<input id="birth" type="date" name="birth" placeholder="Date_of_Birth">
+					</div>
+				
+					<div class="field">
+						<span>
+							<label for="gender">&nbsp;Gender</label>
+							<a class="error genderError00">&nbsp;Please_select</a>
+						</span>
+						<select name="gender" id="gender">
+							<option value="">Please select</option>
+							<option value="M">Male</option>
+							<option value="F">Female</option>
+						</select>
+					</div>
+				</div>
+				<div class="field">
+					<span>
+						<label for="address">&nbsp;Address</label>
+						<a class="error addressError00">&nbsp;Invalid input</a>
+					</span>
+					<input id="address" type="text" name="address" required="" placeholder="Address" value="">
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<span>
+							<label for="postcode">&nbsp;Postcode</label>
+							<a class="error postcodeError00">&nbsp;Invalid input</a>
+						</span>
+						<input id="postcode" type="text" name="postcode" required="" placeholder="Postcode" value="">
+					</div>
+				
+					<div class="field">
+						<span>
+							<label for="due">&nbsp;Due_of_month</label>
+							<a class="error dueError00">&nbsp;Please_select</a>
+						</span>
+						<select id="due" name="due">
+							<option value="">Please_select</option>
+							<option value="Jan">January</option>
+							<option value="Feb">February</option>
+							<option value="Mar">March</option>
+							<option value="Apr">April</option>
+							<option value="May">May</option>
+							<option value="Jun">June</option>
+							<option value="Jul">July</option>
+							<option value="Aug">August</option>
+							<option value="Sep">September</option>
+							<option value="Oct">October</option>
+							<option value="Nov">November</option>
+							<option value="Dec">December</option>
+						</select>
+					</div>
+				</div>
+				<div class="field">
+					<span>
+						<label>&nbsp;Type_of_membership</label>
+						<a class="error typeError00">&nbsp;Please_select</a>
+					</span>
+					<select name="typeOfMembership" id="typeOfMembership" required="">
+						<option value="">Please_select</option>
+						<option value="F">F</option>
+						<option value="S">S</option>
+						<option value="T">T</option>
+						<option value="B">B</option>
+					</select>
+				</div>
+				<button id="submitButton">Submit</button>
+			</form>
+		</section>
+		<script src="app.js"></script>
+	</body>
+</html>

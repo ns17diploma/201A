@@ -1,0 +1,27 @@
+body{
+	background-color: lightblue;
+	font-family: title;
+}
+
+@font-face{
+	font-family: title;
+	src: url(font/data-latin.ttf);
+}
+
+#container{
+	width: 920px;
+	margin: auto;
+	padding-top: 50px;
+}
+
+#title{
+	font-family: title;
+	text-align: center;
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+
+.error{
+	color: red;
+	font-size: 15px;
+}

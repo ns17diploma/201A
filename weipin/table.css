@@ -1,0 +1,24 @@
+body{
+	background-color: lightblue;
+}
+
+table{
+	border-collapse: collapse;
+	width: 95%;
+	margin: auto;
+}
+
+tr,th,td{
+	border: solid 1px;
+}
+
+th,td{
+	width: 100px;
+	text-align: center;
+}
+
+button{
+	border: solid 1px black;
+	background-color: yellow;
+	margin: 8px;
+}
