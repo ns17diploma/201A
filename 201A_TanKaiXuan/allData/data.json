@@ -382,5 +382,17 @@
     "memberType": "F",
     "joinDate": "2017-11-01",
     "subscriptionMonth": "Jan"
+  },
+  {
+    "firstName": "Kai",
+    "lastName": "Xuan",
+    "gender": "Male",
+    "birthday": "2017-11-09",
+    "address": "Taman indapura",
+    "postcode": "83000",
+    "memberNum": "443778",
+    "memberType": "F",
+    "joinDate": "2017-11-16",
+    "subscriptionMonth": "Jan"
   }
 ]
