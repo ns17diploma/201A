@@ -1,6 +1,7 @@
 		/*Link JSON file and seect a position to save the information*/
 		var jsonfile = require('jsonfile');
 		var file = "allData/data.json";
+		var fs = require('fs');
 		var data = "";
 		var data = jsonfile.readFileSync(file);
 
@@ -141,6 +142,10 @@ function clickSpan() {
 var newData = {}
 
 function submitform() {
+
+	if(!fs.existsSync(file)) {
+		jsonfile.writeFileSync(file, [])
+	}
 			
 	newData.firstName = document.getElementById("firstName").value;
 	newData.lastName = document.getElementById("lastName").value;
@@ -178,7 +183,6 @@ function submitform() {
 	//var file = './allData/data.json';
 		
 	$(function(){
-		var showMembers = "";
 		let showMember = chunk(data, 10)
 		addTable(0);
 
