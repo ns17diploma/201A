@@ -20,7 +20,7 @@ $(function(){
 
         for(var i in theMembers){
 
-            let rowhtml = `<tr>
+            var rowhtml = `<tr>
             <td>${theMembers[i]['first_Name']}</td>
             <td>${theMembers[i]['last_Name']}</td>
             <td>${theMembers[i]['Gender']}</td>
@@ -32,9 +32,26 @@ $(function(){
             <td>${theMembers[i]['Address']}</td>
             <td>${theMembers[i]['MBM']}</td>
             </tr>`
-            $('#passtable').append(rowhtml)
         }
+    var html_table =
+        '<table>'+'<tr>'+
+            '<td>'+'first_name'  +'</td>'+
+            '<td>'+'last_name'     +'</td>'+
+            '<td>'+'Gender'         +'</td>'+
+            '<td>'+'postcode'       +'</td>'+
+            '<td>'+'dateofbirth'   +'</td>'+
+            '<td>'+'Join_date'     +'</td>'+
+            '<td>'+'SUB'        +'</td>'+
+            '<td>'+'TOM'        +'</td>'+
+            '<td>'+'Address'    +'</td>'+
+            '<td>'+'MBM' +'</td>'   
+            +'</tr>'+ rowhtml
+            +'</table>';
+
+            $('div#button01').html(html_table);
     }
+
+})
 
     function createpagination(pages){
         $('#memberpagination').html('')
@@ -48,21 +65,3 @@ $(function(){
             }) 
         }
     }
-	var html_table =
-		'<table>'+'<tr>'+
-		    '<td>'+'first_name'    +'</td>'+
-            '<td>'+'last_name'     +'</td>'+
-            '<td>'+'Gender'         +'</td>'+
-            '<td>'+'postcode'       +'</td>'+
-            '<td>'+'dateofbirth'   +'</td>'+
-            '<td>'+'Join_date'     +'</td>'+
-            '<td>'+'SUB'        +'</td>'+
-            '<td>'+'TOM'        +'</td>'+
-            '<td>'+'Address'    +'</td>'+
-            '<td>'+'MBM' +'</td>'   
-            +'</tr>'
-            +'</table>';
-
-            $('div#button01').html(html_table);
-
-})
