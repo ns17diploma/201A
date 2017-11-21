@@ -12,6 +12,8 @@
     "electron": "^1.7.9"
   },
   "dependencies": {
+    "chunk": "0.0.2",
+    "jquery": "^3.2.1",
     "jsonfile": "^4.0.0"
   }
 }

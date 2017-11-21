@@ -382,5 +382,17 @@
     "memberType": "F",
     "joinDate": "2017-11-01",
     "subscriptionMonth": "Jan"
+  },
+  {
+    "firstName": "Elliot",
+    "lastName": "Yap",
+    "gender": "Male",
+    "birthday": "2000-10-01",
+    "address": "1, Apoloslgies",
+    "postcode": "30218",
+    "memberNum": "765910",
+    "memberType": "S",
+    "joinDate": "2017-11-17",
+    "subscriptionMonth": "Nov"
   }
 ]
