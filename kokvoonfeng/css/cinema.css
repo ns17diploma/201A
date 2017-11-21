@@ -1,0 +1,165 @@
+body{
+	margin-top: -20px;
+	background-color: black;
+}
+.clear{
+	clear: both;
+}
+
+img{
+	padding-left:-20px;
+	width: 260px;
+}
+.screen{
+	border-top:solid 1px ;
+	border-bottom-right-radius: 100px;  
+	border-bottom-left-radius: 100px;  
+	font-family: arial black;
+	background-color: rgba(255,0,100,1);
+	text-align: center;
+	width: 80%;
+	margin:auto;
+	padding-top:20px;
+	padding-bottom: 2px;
+}
+.menu{
+	font-size: 2em;
+	border:none;
+	font-family: arial black;
+	color: white;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	background-color: grey;
+	border-top-right-radius:60px;
+	border-bottom-right-radius:60px; 
+
+}
+.fullsite{
+	width:1380px;
+	margin:auto;
+}
+
+.seat{
+	font-size: 2em;
+	border: none;
+	background-color: purple;
+	color: black;
+	padding-bottom: 9px;
+	padding-top: 4px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+} 
+.number{
+	font-family: arial black;
+	color: white;
+	text-align: center;
+}
+.fontabc{
+	font-family: arial black;
+	width: 8%;
+	color: white;
+}
+.rowspan{
+	width: 5%;
+}
+table{
+	margin:auto;
+}
+td{
+	height: 44px;
+	padding: 0px 2px;
+}
+.seatcolor{
+	text-align: center;
+}
+.cseata{
+	padding: 10px 10px;
+	border:none;
+	background-color: purple;
+}
+.cseatb{
+	margin-left: 100px;
+	padding: 10px 10px;
+	border:none;
+	background-color: green;
+}
+.cseatc{
+	padding: 10px 10px;
+	border:none;
+	background-color: cyan;
+}
+.font1{
+	color: purple;
+	font-family: arial black;
+	text-decoration: none;
+}
+.font2{
+	padding-right: 100px;
+	color: green;
+	font-family: arial black;
+	text-decoration: none;
+}
+.font3{
+	color: cyan;
+	font-family: arial black;
+	text-decoration: none;	
+}
+
+.name{
+	text-align: center;
+	font-size: 4em;
+	font-family: Algerian;
+	color: white;
+	text-shadow: -7px -4px black;
+}
+.sidebar{
+	height: 600px;
+	background: linear-gradient(to bottom, #7b4dbb, #b449b4);
+	text-align: center; 
+}
+.border{
+	border-bottom: solid 1px black;
+}
+.movie{
+	font-size: 4em;
+	color: red;
+	text-align: center;
+	font-family: Impact;
+	text-shadow: -6px -5px black;
+}
+.active{
+	background-color: green;
+}
+.active02{
+	background-color:cyan; 
+}
+.button01{
+	padding-top: 20px;
+	text-align: center;
+
+}
+.button01 button{
+	border: none;
+	border-radius: 10px;
+	padding: 10px 40px;
+	font-size: 1.2em;
+	font-family: arial black;
+	color: white;
+}
+.reset{
+	background: linear-gradient(to right, #7b4dbb, #b449b4);
+	margin-right: 900px;
+}
+.book{
+	background: linear-gradient(to right, #b449b4, #7b4dbb);
+}
+.back{
+	padding: 10px 30px;
+	background-color: red;
+	color: white;
+	border-radius: 40px;
+	font-family: arial black;
+}

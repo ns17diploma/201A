@@ -1,0 +1,41 @@
+body{
+	background-color: black; 
+}
+.fullsite{
+	text-align: center;
+	width:1380px;
+	height: 100%;
+	margin:auto;
+	background:url(../image/ticket.jpg) repeat;
+	background-size:cover;
+}
+.inner{
+	background:rgba(0,0,0,0.7);
+	height: 100%;
+}
+.buymovietime{
+	font-size: 7em;
+	padding-top: 60px;
+	font-family: Algerian black;
+	color: white;
+	padding-bottom: 90px;
+}
+.fonta a{
+	color: white;
+	padding: 20px 20px;
+	font-size: 2em;
+	border-radius: 30px;
+	background-color: red;
+}
+.fonta{
+	padding-bottom:100px; 
+}
+.cancel{
+	background-color: blue;
+	margin-right: 900px;
+	padding: 20px 20px;
+	border-radius: 30px;
+	color: black;
+	font-size: 2em;
+	font-family: arial black;
+}

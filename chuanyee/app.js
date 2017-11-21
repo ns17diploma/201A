@@ -1,6 +1,7 @@
 
 var jsf = require ('jsonfile');
 var filename ='jsonfile.json'
+var fs = require('fs')
 var $ = require('jquery');
 
 
@@ -26,6 +27,8 @@ $(function(){
 	// jsf.writeFile('jsonfile.json', obj ,function(err){
 	// 	console.log(err)
 	// });
+		if (!fs.existsSync(filename)) {
+    	jsf.writeFileSync(filename, [])
 
 		var arr = jsf.readFileSync(filename);
 		arr.push(obj);

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment-A_xinyi</title>
+  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="node_modules/semantic-ui/dist/semantic.min.css">
+</head>
+<body>
+  <div id="contain">
+  <div class="ui hidden divider"></div>
+  <div class="ui form attached segment" style="width: 960px; margin:auto;background-color:lightblue">
+  <div style="font-weight: bold;">
+    <u>F</u>ile
+    <u>R</u>ecords
+  </div>
+  <div class="ui text container" id="container">
+    <h1 style="text-align: center;">Member Form</h1>
+    <div class="ui pointing below basic red label error-message" id="error03">
+      <label>Form is not complete</label>
+    </div>
+    <div class="message-box"></div>
+    <div class="ui hidden divider"></div>
+    <div class="two fields">
+      <div class="field">
+        <label>Membership Number</label>
+        <input id="input-membership" class="input" type="number">  
+        <div class="ui pointing basic red label error-message" id="error01">
+          <label>Membership Number is not a valid modulus 11 number</label>
+        </div>
+     <div class="ui pointing basic red label error-message" id="error0">
+        <label>Membership Number is not a valid</label>
+    </div>
+        <div class="ui pointing basic red label error-message" id="error02">
+          <label>Membership Number is not 6 digits</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Type of Membership</label>
+        <select class="ui dropdown input-membership-type" name='type' id="input-membership-type">
+          <option value="F">F</option>
+          <option value="S">S</option>
+          <option value="T">T</option>
+          <option value="B">B</option>
+        </select>
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label>First Name</label>
+        <input id="input-name" class="input">
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input id="input-last" class="input">
+      </div>
+    </div>
+    <div class="two fields">
+         <div class="field">
+        <label>Join Date</label>
+        <input id='jd' class="input" name='join-date' type="date">
+      </div>
+      <div class="field">
+        <label>Subscription Due Month</label>
+        <select class="ui dropdown day" name='sub-due-month' id="day">
+          <option value="Jan">January</option>
+          <option value="Feb">February</option>
+          <option value="Mar">March</option>
+          <option value="Apr">April</option>
+          <option value="May">May</option>
+          <option value="Jun">June</option>
+          <option value="Jul">July</option>
+          <option value="Aug">August</option>
+          <option value="Sep">September</option>
+          <option value="Oct">October</option>
+          <option value="Nov">November</option>
+          <option value="Dec">December</option>
+       </select>
+      </div>
+    </div>
+    <div class="three fields">
+      <div class="field">
+        <label>Sex</label>
+        <select class="ui dropdown" name="sex" id="sex">
+          <option value="M">Male</option>
+          <option value="F">Female</option> 
+        </select>
+      </div>
+      <div class="field">
+        <label>Date Of Birth</label>
+        <input id='dob' class="input" name='dob' type="date">
+      </div>
+          <div class="field">
+              <label>Postcode</label>
+              <input id='Postcode' class="input" name='postalcode' type="text">
+            </div>
+        </div>
+      <div class="field">
+              <label>Address</label>
+              <input class="input" id='address1' name='address01' type="text">
+          </div>
+          <div class="field">
+              <input class="input" id='address2' name='address02' type="text">
+          </div>
+          <div class="field">
+              <input class="input" id='address3' name='address03' type="text">
+          </div>
+      </div>
+      <div class="ui hidden divider"></div>
+      <div class="ui form">
+        <div class="ui bottom attached buttons">
+          <div class="ui primary button" id='button'>Save</div>
+        </div>
+      </div>
+   </div>
+</body>
+<script type="text/javascript" src="app.js"></script>
+</html>

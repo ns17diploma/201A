@@ -1,0 +1,213 @@
+body{
+	background-color: black;
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+.clear{
+	clear: both;
+}
+.leftlogoimage{
+	width: 260px;
+}
+
+.clear{
+	clear: both;
+}
+.name{
+	text-align: center;
+	font-size: 4em;
+	font-family: Algerian;
+	color: white;
+	text-shadow: -7px -4px black;
+}
+.movie{
+	font-size: 4em;
+	color: red;
+	text-align: center;
+	font-family: Impact;
+	text-shadow: -6px -5px black;
+}
+.border{
+	border-bottom: solid 1px black;
+}
+.sidebar{
+	height: 600px;
+	background: linear-gradient(to bottom, #7b4dbb, #b449b4);
+	text-align: center; 
+}
+.menu{
+	font-size: 2em;
+	border:none;
+	font-family: arial black;
+	color: white;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	background-color: grey;
+	border-top-right-radius:60px;
+	border-bottom-right-radius:60px; 
+}
+.fullsite{
+	width:1380px;
+	margin:auto;
+	height: 100%;
+	background:url(../image/cinema.jpg)no-repeat;
+	background-size:cover;
+}
+.inner{
+	background:rgba(0,0,0,0.7);
+
+}
+.topline img{
+	margin-left: 70px;
+	padding:10px 10px;
+	width: 80px;
+	height: 80px;
+	border:solid 2px white;
+	border-radius: 50px;
+	background-color: purple;
+}
+.full{
+	text-align: center;
+	background-color: rgba(100,100,100,0.5)
+}
+.box{
+	display: inline-block;
+}
+.kuangfont{
+	border: solid 3px black;
+	border-radius: 40px;
+	width: 300px;
+	height: 440px;
+	margin: auto;
+	background: black;
+	padding-top: 100px;
+}
+.kuangfont h4{
+	color: blue;
+	font-size: 4em;
+}
+.kuangfont p{
+	color: white;
+	font-family: sans-serif;
+	font-size: 3em;
+}
+.star{
+	color: yellow;
+	font-size: 2.5em;
+
+}
+.imagetop{
+	margin: 0px 70px;
+	width: 300px;
+	height: 440px;
+	border-radius: 10px;
+}
+.feng{
+	color: white;
+	margin-left:20px;
+	font-size: 4em;
+	font-family: Algerian;
+	text-shadow: -7px -4px purple;
+}
+span .icon{
+	font-size: 4em;
+	color: white;
+}
+.icon1{
+	margin-left:300px;
+}
+.topmovie{
+	font-family: arial black;
+	margin-bottom: 20px;
+	font-size: 3.5em;
+	color: red;
+}
+
+.iconappstore{
+	background: url(../image/app.png) no-repeat ;
+	padding:14px 45px;
+	border:none;
+}
+.iconplaystore{
+	background: url(../image/app2.png) no-repeat ;
+	padding: 14px 44px;
+	border:none;
+}
+.kongge{
+	padding-top: 100px;
+}
+.kongge img{
+	width: 400px;
+	height: 550px;
+	margin-left: 80px;
+	margin-top: 20px;
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+.grey{
+	margin-bottom: 80px;
+	background-color: grey;
+	margin-top:100px; 
+	padding-top: 20px 20px;
+}
+.new{
+	color: black;
+	margin-left:160px;
+	font-family: arial black;
+	font-size: 3em;
+	padding: 0px 20px;
+	border-radius: 30px;
+	border:solid 2px black;
+	background-color: white;
+}
+.border01{
+	border-bottom: solid 1px white;
+}
+.fullsite2{
+	width: 100%;
+}
+.floatleftimage{
+	width: 40%;
+}
+.floatrightfont{
+	color: white;
+	float: right;
+	margin-top: 60px;
+	width: 60%;
+}
+.fontmoviename{
+	font-family: Copperplate Gothic Light;
+	font-size: 4em;
+	margin-bottom: 45px;
+}
+.floatrightfont i{
+	color: yellow;
+	font-size: 4em;
+	margin-top: 60px;
+}
+.buy{
+	margin-left: 300px;
+	font-size: 3em;
+	color: white;
+	padding:10px 20px;
+	border:none;
+	border-radius: 20px;
+	background-color: red;
+}
+.movietime{
+	font-size: 3em;
+	margin-top: 50px;
+}
+.button{
+	padding: 5px 10px;
+	margin:30px;
+	font-family: arial black;
+	background-color: black;
+	color:white;
+	border:solid 2px red;
+}
