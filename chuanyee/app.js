@@ -4,24 +4,38 @@ var filename ='jsonfile.json'
 var fs = require('fs')
 var $ = require('jquery');
 
+function error() {
+
+	$('.error01').hide();
+	$('.error02').hide();
+	$('.error03').hide();
+	$('.error04').hide();
+	$('.error05').hide();
+	$('.error06').hide();
+	$('.error07').hide();
+	$('.error08').hide();
+	$('.error09').hide();
+	$('.error10').hide();
+	$('.error11').hide();
+	$('.error12').hide();
+}
+
 
 $(function(){
- 
-	
-
+	error()
 	function write(){
-	var obj = {
-		Membership_Number: $('#membership_number').val(),  
-		First_Name: $('#first_name').val(),
-		Last_Name: $('#last_name').val(),
-		Address: $('#ad_dress').val(),
-		Postcode: $('#post_code').val(),
-		Sex: $('#gender').val(),
-		Date_Of_Birth: $('#date_birth').val(),
-		Join_Date: $('#join_date').val(),
-		Type_Of_Membership:$('#type_member').val(),
-		Subscription: $('#due_month').val()
-	}
+		var obj = {
+			Membership_Number: $('#membership_number').val(),  
+			First_Name: $('#first_name').val(),
+			Last_Name: $('#last_name').val(),
+			Address: $('#ad_dress').val(),
+			Postcode: $('#post_code').val(),
+			Sex: $('#gender').val(),
+			Date_Of_Birth: $('#date_birth').val(),
+			Join_Date: $('#join_date').val(),
+			Type_Of_Membership:$('#type_member').val(),
+			Subscription: $('#due_month').val()
+		}
 	
 	
 	// jsf.writeFile('jsonfile.json', obj ,function(err){
@@ -271,8 +285,6 @@ $('#save').click(function(){
 		write();
 	} else {
 		console.error('Error');
-	}
-	
-})
-
-});
+	}	
+}) 
+}})
