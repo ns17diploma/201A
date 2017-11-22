@@ -2,10 +2,13 @@
 		var jsonfile = require('jsonfile');
 		var file = "allData/data.json";
 		var fs = require('fs');
+
+if (!fs.existsSync(file)) {
+	fs.mkdirSync('allData')
+	fs.writeFileSync(file, '[]')
+}
 		var data = "";
 		var data = jsonfile.readFileSync(file);
-
-
 
 
 
@@ -183,6 +186,7 @@ function submitform() {
 	//var file = './allData/data.json';
 		
 	$(function(){
+
 		let showMember = chunk(data, 10)
 		addTable(0);
 
