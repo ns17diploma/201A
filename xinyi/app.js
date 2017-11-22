@@ -2,6 +2,7 @@
 let jsf = require('jsonfile');
 var filename='jsfile.json'
 var $ = require('jquery');
+var jQuery = $;
 var chunk = require('chunk');
 
 $(function(){
