@@ -4,12 +4,16 @@ var chunk = require('chunk');
 var fs = require('fs');
 var file = 'data.json';
 var data = {};
+	
+// create data.json
+	if (!fs.existsSync(file)) {
+		jsonfile.writeFileSync(file, '[]')
+	}
+
+
 // Submit Function
 	function sumbitform(){
 
-		if (!fs.existsSync(file)) {
-			jsonfile.writeFileSync(file,[])
-		}
 
 		data.membershipNumber = $('#membership-number').val();
 		data.gender = $('#gender').val();
