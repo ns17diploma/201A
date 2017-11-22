@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="Framework/semantic.min.css">
     <link rel="stylesheet" href="css/type.css">
     <script src="js/app.js"></script>
+
   </head>
   <body>
 <!--      Name         -->
@@ -78,7 +79,7 @@
       <div class="two fields">
         <div class="field removeError" id="validate_memberNum">
           <label>Membership number</label>
-            <input type="text" readonly="true" placeholder="Membership number" id="memberNum" maxlength="6">
+            <input type="number" placeholder="Membership number" id="memberNum">
             <button type="button" onclick="create()">Create a member number</button>
             <div class="ui pointing red basic label removeLable" id="lable_memberNum"  style="display: none"">
               Please click the create button 
