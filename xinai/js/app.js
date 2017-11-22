@@ -1,17 +1,13 @@
 var jsf = require('jsonfile');
-<<<<<<< HEAD
 var filename = 'jsfile.json';	
 var fs = require('fs')
-=======
-var filename = 'jsfile.json';
->>>>>>> 6dcb3f77d50ee77df1bd0764877547839cdad1fc
 var $ = require('jquery');
 
 $(function(){ 
 	$('#error0').hide();
 	$('#error01').hide();
 	$('#error02').hide();
-	var $result = true
+	var $result = false
 
 	//save button
 	$('#save').click(function(){
@@ -33,8 +29,9 @@ $(function(){
 			if ($this.val() === "") {
 				$this.addClass('error')
 				error_label('#message-box', $('#error0').show())
-				$result = false
 			} else {
+				$('#error0').hide()
+				$('body *').removeClass('error')
 				$result = true				
 			}
 			return $result
@@ -92,12 +89,9 @@ $(function(){
 				Subscription_Due_Month: $('#due').val()
 		}
 
-<<<<<<< HEAD
 		if (!fs.existsSync(filename)) {
     		jsf.writeFileSync(filename, [])
   		}		
-=======
->>>>>>> 6dcb3f77d50ee77df1bd0764877547839cdad1fc
 		var arr = jsf.readFileSync(filename);
 		arr.push(obj);
 		jsf.writeFileSync(filename,arr,{spaces: 1, EOL:'\r\n'});
