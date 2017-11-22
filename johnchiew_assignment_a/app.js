@@ -1,26 +1,32 @@
 var jsonfile = require('jsonfile');
 var $ = require('jquery');
 var chunk = require('chunk');
+var fs = require('fs');
 var file = 'data.json';
 var data = {};
 // Submit Function
 	function sumbitform(){
-	data.membershipNumber = $('#membership-number').val();
-	data.gender = $('#gender').val();
-	data.firstName = $('#first-name').val();
-	data.lastName = $('#last-name').val();
-	data.dateBirth = $('#date-birth').val();
-	data.joinDate = $('#join-date').val();
-	data.address = $('#address').val();
-	data.postcode = $('#postcode').val();
-	data.typeOfMembership = $('#typeMember').val();
-	data.subscriptionDueMonth = $('#due').val();
-	
-	var containerData = jsonfile.readFileSync(file);
-	containerData.push(data);
-	jsonfile.writeFile('data.json', containerData, {EOL:'\r\n', spaces:2}, function(err){
-		console.error(err)
-	});
+
+		if (!fs.existsSync(file)) {
+			jsonfile.writeFileSync(file,[])
+		}
+
+		data.membershipNumber = $('#membership-number').val();
+		data.gender = $('#gender').val();
+		data.firstName = $('#first-name').val();
+		data.lastName = $('#last-name').val();
+		data.dateBirth = $('#date-birth').val();
+		data.joinDate = $('#join-date').val();
+		data.address = $('#address').val();
+		data.postcode = $('#postcode').val();
+		data.typeOfMembership = $('#typeMember').val();
+		data.subscriptionDueMonth = $('#due').val();
+		
+		var containerData = jsonfile.readFileSync(file);
+		containerData.push(data);
+		jsonfile.writeFile('data.json', containerData, {EOL:'\r\n', spaces:2}, function(err){
+			console.error(err)
+		});
 }
 
 // Table

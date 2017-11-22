@@ -21,12 +21,17 @@ function saveRecord(){
 		Subscription_Due_Month: $('#due').val(),
 	}
 
-	var arr = jsf.readFileSync('jsfile.json');
-	arr.push(obj);
-	jsf.writeFileSync('jsfile.json', arr, function (err){
-		console.error(err)
-	});
+	function addMember(){
+		if (!fs.existsSync('jsfile.json')) {	
+			jsf.writeFileSync('jsfile.json', []);
+		}
+		var arr = jsf.readFileSync('jsfile.json');
+		arr.push(obj);
+		jsf.writeFileSync('jsfile.json', arr, function (err){
+			console.error(err)
+	}
 
+	});
 }
 
 var result = false;
