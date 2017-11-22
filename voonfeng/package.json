@@ -1,0 +1,19 @@
+{
+  "name": "json",
+  "version": "1.0.0",
+  "description": "json",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chunk": "^0.0.2",
+    "fs": "0.0.1-security",
+    "jquery": "^3.2.1",
+    "jsonfile": "^4.0.0",
+    "semantic-ui-css": "^2.2.12"
+  },
+  "devDependencies": {}
+}

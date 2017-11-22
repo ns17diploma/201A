@@ -1,11 +1,17 @@
 		/*Link JSON file and seect a position to save the information*/
 		var jsonfile = require('jsonfile');
-		var file = "allData/data.json";
+		var file = "data.json";
+		var fs = require('fs');
+
+if (!fs.existsSync(file)) {
+	fs.mkdirSync('allData')
+	fs.writeFileSync(file, '[]')
+}
 		var data = "";
-		var data = jsonfile.readFileSync(file);
 
 
 
+console.log('new branch')
 
 
 /************************Function to create member number**************************/
@@ -141,6 +147,8 @@ function clickSpan() {
 var newData = {}
 
 function submitform() {
+
+
 			
 	newData.firstName = document.getElementById("firstName").value;
 	newData.lastName = document.getElementById("lastName").value;
@@ -169,6 +177,9 @@ function submitform() {
 	})
 }
 
+<<<<<<< HEAD
+
+=======
 /* Write information in table.html */
 //var read = jsonfile.readFileSync(file);
 //var showMember = "";
@@ -178,7 +189,7 @@ function submitform() {
 	//var file = './allData/data.json';
 		
 	$(function(){
-		var showMembers = "";
+
 		let showMember = chunk(data, 10)
 		addTable(0);
 
@@ -219,6 +230,7 @@ function submitform() {
 			addTable(Number($this.val()) - 1)		
 		})
 	})
+>>>>>>> 5538807b08ed9fb4fa14ef8b5f78503c62d91a8e
 
 
 

@@ -25,3 +25,13 @@ body{
 	color: red;
 	font-size: 15px;
 }
+
+#submitButton{
+	margin-top: 10px;
+	background-color: red;
+	padding: 5px;
+	font-size: 20px;
+	color: lightblue;
+	border: solid 2px black;
+	border-radius: 5px;
+}

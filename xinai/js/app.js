@@ -1,6 +1,10 @@
 var jsf = require('jsonfile');
+<<<<<<< HEAD
 var filename = 'jsfile.json';	
 var fs = require('fs')
+=======
+var filename = 'jsfile.json';
+>>>>>>> 6dcb3f77d50ee77df1bd0764877547839cdad1fc
 var $ = require('jquery');
 
 $(function(){ 
@@ -88,9 +92,12 @@ $(function(){
 				Subscription_Due_Month: $('#due').val()
 		}
 
+<<<<<<< HEAD
 		if (!fs.existsSync(filename)) {
     		jsf.writeFileSync(filename, [])
   		}		
+=======
+>>>>>>> 6dcb3f77d50ee77df1bd0764877547839cdad1fc
 		var arr = jsf.readFileSync(filename);
 		arr.push(obj);
 		jsf.writeFileSync(filename,arr,{spaces: 1, EOL:'\r\n'});

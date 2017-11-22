@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.min.css">
+  <link rel="stylesheet" href="assignment1.css">
+  <title>MEMBER FORM</title>
+</head>
+<body>
+
+  <p class="linetwo">MEMBER FORM</p>
+
+  <section class="marginleft">
+
+  <div class="ui form">
+    <div class="four fields">
+      <div id="errormembership" class="field">
+        <label>Membership Number</label>
+        <input id="check" class="common1 input_membershipnumber membership" placeholder="Membership Number" required="true" type="number">
+        <label class="errormassage0">Membership Number is not numeric</label>
+        <label class="modulus">Membership Number is not a valid modulus 11 number</label>
+        <label class="errormassage1">Membership Number is not 6 digits</label>
+      </div>
+      <div class="field">
+        <label>Gender</label>
+        <select class="input_sexual" placeholder="1234"  name="card[expire-gender]">
+          <option value="F">Female</option>
+          <option value="M">Male</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui form">
+    <div class="four fields">
+      <div id="errorfirstname" class="field">
+        <label>First Name</label>
+        <input id="firstname" class="common input_firstname" placeholder="First Name" type="text">
+        <label class="errormassage">Please Input your FirstName & Cannot Input Number</label>
+      </div>
+      <div id="errorlastname" class="field">
+        <label>Last Name</label>
+        <input id="lastname" class="common input_lastname" placeholder="Last Name" type="text">
+        <label class="errormassage2">Please Input your LastName & Cannot Input Number</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui form">
+    <div class="four fields">
+      <div id="errordate" class="field">
+        <label>Date of Birth</label>
+        <input id="dateofbirth" class="common input_date" placeholder="" type="date">
+        <label class="errormassage8">Please Input your date of bitrh & Cannot Input Number</label>
+      </div>
+      <div id="errorjoin" class="field">
+        <label>Join Date</label>
+        <input id="joindate" class="common input_joindate" placeholder="" type="date">
+        <label class="errormassage9">Please Input your join date & Cannot Input Number</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui form">
+    <div class="four fields">
+      <div class="field">
+        <label>Subscription Due Month</label>
+        <select class="input_subscription" type="text">
+          <option value="Jan">January</option>
+          <option value="Feb">February</option>
+          <option value="Mar">March</option>
+          <option value="Apr">April</option>
+          <option value="May">May</option>
+          <option value="Jun">June</option>
+          <option value="Jun">July</option>
+          <option value="Aug">August</option>
+          <option value="Sep">September</option>
+          <option value="Oct">October</option>
+          <option value="Nov">November</option>
+          <option value="Dec">December</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Type of Membership</label>
+        <select class="input_type">
+          <option value="F">F</option>
+          <option value="S">S</option>
+          <option value="T">T</option>
+          <option value="B">B</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="ui form">
+    <div class="two fields">
+      <div id="erroraddress" class="field">
+        <label>Address</label>
+        <input id="addresserror" class="common input_address" placeholder="#125,jalan,taman,#johor,#kluang" type="text">
+        <label class="errormassage3">Please Input your address</label>
+      </div>
+    </div>
+  </div>
+
+    <div class="ui form">
+      <div class="four fields">
+        <div id="errorpostcode" class="field">
+          <label>Postcode</label>
+          <input id="postcodeerror" class="common input_postcode" placeholder="#86000" type="number">
+        <label class="errormassage4">Please Input your postcode</label>
+        </div>
+      </div>
+    </div>
+
+  <button class="save button" type="submit">Save  Record</button>
+  <button class="cancel button">Cancel</button>
+    <label class="inputcheck">Please check your form</label>
+  </section>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -20,9 +20,12 @@
     "electron": "~1.7.8",
     "jquery": "^3.2.1",
     "semantic-ui": "^2.2.13"
+<<<<<<< HEAD
   },
   "dependencies": {
     "chunk": "file:node_modules\\chunk",
     "jsonfile": "file:node_modules\\jsonfile"
+=======
+>>>>>>> 6dcb3f77d50ee77df1bd0764877547839cdad1fc
   }
 }
