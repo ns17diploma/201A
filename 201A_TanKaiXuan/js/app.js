@@ -5,7 +5,7 @@
 		var data = jsonfile.readFileSync(file);
 
 
-
+console.log('new branch')
 
 
 /************************Function to create member number**************************/
