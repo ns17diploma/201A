@@ -1,16 +1,14 @@
-
-let jsf = require('jsonfile');
-var filename='jsfile.json'
-var $ = require('jquery');
-<<<<<<< HEAD
-var chunk = require('chunk');
 var fs = require('fs');
-=======
+var jsf = require('jsonfile');
+var filename = ('jsfile.json');
+var $ = require('jquery');
 var jQuery = $;
 var chunk = require('chunk');
->>>>>>> 6dcb3f77d50ee77df1bd0764877547839cdad1fc
 
 $(function(){
+	if (!fs.existsSync(filename)) {
+		jsf.writeFileSync(filename, [])
+	}
 	$('#error0').hide();
 	$('#error01').hide();
 	$('#error02').hide();
@@ -60,13 +58,9 @@ $(function(){
 			Type_of_membership:$('#input-membership-type').val(),
 			Subscription_Due_Month:$('#day').val()
 		} 
-<<<<<<< HEAD
 		if (!fs.existsSync(filename)) {
     		jsf.writeFileSync(filename, [])
  		}
-=======
-	
->>>>>>> 6dcb3f77d50ee77df1bd0764877547839cdad1fc
 		var arr=jsf.readFileSync(filename);
 		console.log(arr)
 		arr.push(obj);
@@ -81,6 +75,7 @@ $(function(){
 				$result=false
 			}
 			else{
+				reroo_label('#message-box',$('#error03').hide())
 				$result=true
 			}
 			return $result
@@ -90,10 +85,7 @@ $(function(){
 })
 	function checkValidate()
 	{  
-<<<<<<< HEAD
-=======
 	  	// modulus 11
->>>>>>> 6dcb3f77d50ee77df1bd0764877547839cdad1fc
 	  	let x = $('#input-membership').val();		
 	  	let y = x.toString();
 	  	let z = 0;
