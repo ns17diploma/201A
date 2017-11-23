@@ -10,5 +10,17 @@
     "memberType": "F",
     "joinDate": "2017-11-02",
     "subscriptionMonth": "Jan"
+  },
+  {
+    "firstName": "Tan",
+    "lastName": "xUAN",
+    "gender": "Male",
+    "birthday": "2017-11-02",
+    "address": "JALFKJ",
+    "postcode": "JDLKSFJAL",
+    "memberNum": "941913",
+    "memberType": "F",
+    "joinDate": "2017-11-03",
+    "subscriptionMonth": "Jan"
   }
 ]

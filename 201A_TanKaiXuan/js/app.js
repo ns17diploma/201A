@@ -10,10 +10,6 @@ if (!fs.existsSync(file)) {
 		var data = "";
 
 
-
-console.log('new branch')
-
-
 /************************Function to create member number**************************/
 function create(){
 
@@ -63,6 +59,16 @@ function validation() {
     validate = 0; 
 
     /*Validation the user input*/
+   
+    let number = document.getElementById('memberNum').value; 
+    var digit = number.toString();
+	var mul = 6;
+	var sum = 0;
+	for (var i = 0; i < digit.length; i++) {
+		sum += (digit[i] * mul);
+		mul--
+	}
+   
     if (firstName != "") {
     	validate++;
     } else {
@@ -106,7 +112,7 @@ function validation() {
 		birthday.classList.add("error");
     	document.getElementById('lable_birthday').style.display = 'block';		
 	}
-	if (checkMemberNum.length == 6) {
+	if (checkMemberNum.length == 6 && (sum % 11) === 0) {
 		validate++ ;
 	} else {
 		memberNum = document.getElementById('validate_memberNum');
@@ -177,60 +183,9 @@ function submitform() {
 	})
 }
 
-<<<<<<< HEAD
-
-=======
-/* Write information in table.html */
-//var read = jsonfile.readFileSync(file);
-//var showMember = "";
-	var $ = require('jquery');
-	//var jsonfile = require('jsonfile');
-	var chunk = require('chunk');
-	//var file = './allData/data.json';
-		
-	$(function(){
-
-		let showMember = chunk(data, 10)
-		addTable(0);
-
-		function makeAll(btnNum) {
-			for (var j = 0; j < btnNum; j++) {
-				let theBtn = '<button type="button" class="pageBtn" value="' 
-					+ (Number(j) + 1) + '">' + (Number(j) + 1) + '</button>'
-				$('#allBtn').append(theBtn);
-			}
-
-		}
-
-		function addTable(x) {
-			var data = jsonfile.readFileSync(file);
-			$('#listTable').html("");
-			let theMembers = showMember[x];
-			for (var i = 0; i < theMembers.length; i++) {
 
 
-				let members = `<tr>
-								<td>${theMembers[i]['firstName']}</td>
-								<td>${theMembers[i]['lastName']}</td>
-								<td>${theMembers[i]['gender']}</td>
-								<td>${theMembers[i]['birthday']}</td>
-								<td>${theMembers[i]['address']}</td>
-								<td>${theMembers[i]['postcode']}</td>
-								<td>${theMembers[i]['memberNum']}</td>
-								<td>${theMembers[i]['memberType']}</td>
-								<td>${theMembers[i]['joinDate']}</td>
-								<td>${theMembers[i]['subscriptionMonth']}</td>
-								</tr>`
-				$('#listTable').append(members);	
-			}}
-			makeAll(showMember.length);
 
-		$('.pageBtn').click(function(){
-			$this = $(this)
-			addTable(Number($this.val()) - 1)		
-		})
-	})
->>>>>>> 5538807b08ed9fb4fa14ef8b5f78503c62d91a8e
 
 
 
