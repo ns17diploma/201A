@@ -1,11 +1,17 @@
 let jsf = require('jsonfile');
+let fs = require('fs');
 let $ = require('jquery');
 
 function error() {
 
 	$('.error').hide();
+
+	if (!fs.existsSync('jsfile.json')) {	
+		jsf.writeFileSync('jsfile.json', []);
+	}
 	
 }
+
 
 function saveRecord(){
 	var obj = {
@@ -22,16 +28,15 @@ function saveRecord(){
 	}
 
 	function addMember(){
-		if (!fs.existsSync('jsfile.json')) {	
-			jsf.writeFileSync('jsfile.json', []);
-		}
+
 		var arr = jsf.readFileSync('jsfile.json');
 		arr.push(obj);
 		jsf.writeFileSync('jsfile.json', arr, function (err){
 			console.error(err)
-	}
+		})
 
-	});
+	}
+	addMember()
 }
 
 var result = false;
