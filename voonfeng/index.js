@@ -1,10 +1,8 @@
 let jsf = require('jsonfile');
     let file = 'jsfile.json';
     var $ = require('jquery');
-
-    $('.cansel').on('click',function(){
-      location.reload();
-    })
+    score = 0;
+   
 
     //Membership Number
     //check membership data
@@ -102,47 +100,39 @@ let jsf = require('jsonfile');
     })
 
     //date of birth
-    $('.errormassage8').hide();
-    $('#dateofbirth').on('keyup',function(){
-      var test = this.value;
-      var status = false;
-      var jsdf = false; 
-      if ($(this).val() === "" ){
-        status = true;
-        jsdf = true;
-        $('#errordate').removeClass('error');
-        $('.errormassage8').hide();
+    $('.errormassage5').hide();
+    var elem = $("#dateofbirth");
+    if(elem) elem.val(elem.val().substr(0,10));
+    $('#dateofbirth').on('keyup', function(){
+      if (elem.val().length > 10){
+        elem.val(elem.val().substr(0, 10));
+        status = false;
+        $('#errordate').addClass('error');
+        $('.errormassage5').show();
       }else{
-        for(a = 11; a < 10000; ++a)
-        if (test.length > 10){
-          status = true;
-          var z = test.substr((Number(test.length)-a), 10);
-          document.getElementById('dateofbirth').value = z;
-        } 
-      }
-    })
+        status = true;
+        $('#errordate').removeClass('error');
+        $('.errormassage5').hide();
+      }           
+    });
 
 
     //join date
-    $('.errormassage9').hide();
-    $('#joindate').on('keyup',function(){
-    var test = this.value;
-    var jsdf = false; 
-    var status = false;
-     if ($(this).val() === "" ){
+    $('.errormassage6').hide();
+    var elem2 = $("#joindate");
+    if(elem2) elem2.val(elem2.val().substr(0,10));
+    $('#joindate').on('keyup', function(){
+      if (elem2.val().length > 10){
+        elem2.val(elem2.val().substr(0, 10));
+        status = false;
+        $('#errorjoin').addClass('error');
+        $('.errormassage6').show();
+      }else{
         status = true;
-        jsdf = true;
         $('#errorjoin').removeClass('error');
-        $('.errormassage9').hide();
-     }else{
-      for(a = 11; a < 10000; ++a)
-      if (test.length > 10){
-        status = true;
-        var z = test.substr((Number(test.length)-a), 10);
-        document.getElementById('dateofbirth').value = z;
-      } 
-     }
-    })
+        $('.errormassage6').hide();
+      }           
+    });
 
     //Address
       var status = false;
@@ -174,13 +164,20 @@ let jsf = require('jsonfile');
       }
     })
 
+    //cancel
+     $('.cancel').on('click',function(){
+      location.reload();
+    })
+
     //save button
     $('.inputcheck').hide();
-    $('.save').on('click',function(vilidate){
+    $('.save').on('click',function(){
+    	vilidate();
       if($('.field').hasClass('error') || $('.common').val() === ""){
         $('.inputcheck').show();
       }else{
         $('.inputcheck').hide();
+
         var obj = {
           Membership_Number:$('.input_membershipnumber').val(),
           Sexual:$('.input_sexual').val(),
@@ -193,13 +190,42 @@ let jsf = require('jsonfile');
           Subscription_Due_Month:$('.input_subscription').val(),
           Postcode:$('.input_postcode').val()
         }
+
         var arr = jsf.readFileSync(file);
         arr.push(obj);
         jsf.writeFile('jsfile.json',arr, function (err){
-          console.log('complete');
+
+      	// Get the modal
+      	var modal = document.getElementById('myModal');
+
+      	// Get the button that opens the modal
+      	var btn = document.getElementById("myBtn");
+
+      	// Get the <span> element that closes the modal
+      	var span = document.getElementsByClassName("close")[0];
+
+      	// When the user clicks on the button, open the modal 
+      	modal.style.display = "block";
+      	
+
+      	// When the user clicks on <span> (x), close the modal
+      	span.onclick = function() {
+      	    modal.style.display = "none";
+      	}
+
+      	// When the user clicks anywhere outside of the modal, close it
+      	window.onclick = function(event) {
+      	    if (event.target == modal) {
+      	        modal.style.display = "none";
+      	    }
+      	}
+		
         });
       }
     })
+
+   
+ 
 
     function vilidate()
     {
@@ -207,11 +233,11 @@ let jsf = require('jsonfile');
       if ($('.common').val() === "" || $('.common1').val() === "" ){
         status = false;
         $('.inputcheck').show();
-        
-      }else{
-        status = true;
-        $('.inputcheck').hide();
+      	}else{
+        	status = true;
+        	$('.inputcheck').hide();
+      	}
       }
-    }
-    return status;
-  }
+    	return status;
+  	}
+	
