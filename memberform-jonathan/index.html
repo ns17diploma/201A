@@ -1,124 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="index.js"></script>
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
-	<title></title>
+   <link rel="stylesheet" type="text/css" href="index.css">
+   <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
+   <script type="text/javascript" src="app.js"></script>
+   <title></title>
 </head>
 <body>
-	<h1>Member Form</h1>
-	<div id="width">
-		<div>
-			<div class="space float">
-				<label for="first_Name">First Name</label>
-				<div>
-					<input type="text" name="first_Name" id="first_Name" class="long">
-					<div class="error0">empty</div>
-				</div>
-			</div>
-			<div class="space float">
-				<label for="last_Name">Last Name</label>
-				<div>
-					<input type="text" name="last_Name" id="last_Name" class="long">
-					<div class="error1">empty</div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
+   <h1>Member Form</h1>
+   <div id="width">
+      <div>
+         <div class="space float">
+            <label for="First_Name">First Name</label>
+            <div>
+               <input type="text" name="First_Name" id="First_Name" class="long">
+            </div>
+         </div>
+         <div class="space float">
+            <label for="Last_Name">Last Name</label>
+            <div>
+               <input type="text" name="Last_Name" id="Last_Name" class="long">
+            </div>
+         </div>
+         <div class="clear"></div>
+      </div>
 
-		<div>
-			<div class="space float">
-				<label for="gender">Gender</label>
-				<div>
-					<select name="ender" id="gender" class="long">Gender
-						<option value="male">Male</option>
-						<option value="female">Female</option>
-					</select>
-				</div>
-			</div>
-			<div class="space float">
-				<label for="postcode">Postcode</label>
-				<div>
-					<input type="number" name="pc" id="pc" class="long">
-					<div class="error3">five digit</div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
+      <div>
+         <div class="space float">
+            <label for="Gender">Gender</label>
+            <div>
+               <select name="Gender" id="Gender" class="long">Gender
+                  <option value="">Please Choose An Option</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+               </select>
+            </div>
+         </div>
+         <div class="space float">
+            <label for="PostCode">Postcode</label>
+            <div>
+               <input type="number" name="PostCode" id="PostCode" class="long"> 
+            </div>
+         </div>
+         <div class="clear"></div>
+      </div>
 
-		<div>
-			<div class="space float">
-				<label for="dateofbirth">Date Of Birth</label>
-				<div>
-					<input type="date" name="dateofbirth" id="dob" class="long">
-					<div class="error4">invalid</div>
-				</div>
-			</div>
-			<div class="space float">
-				<label for="join_date">Join Date</label>
-				<div>
-					<input type="date" name="join_date" id="jd" class="long">
-					<div class="error41">invalid</div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
+      <div>
+         <div class="space float">
+            <label for="DOB">Date Of Birth</label>
+            <div>
+               <input type="date" name="DOB" id="DOB" class="long">
+            </div>
+         </div>
+         <div class="space float">
+            <label for="JD">Join Date</label>
+            <div>
+               <input type="date" name="JD" id="JD" class="long">
+            </div>
+         </div>
+         <div class="clear"></div>
+      </div>
 
-		<div>
-			<div class="space float">
-				<label for="sub">SUB</label>
-				<div>
-					<select name="SUB" id="SUB" class="long">
-						<option value="jan">January</option>
-						<option value="feb">February</option>
-						<option value="mar">March</option>
-						<option value="apr">April</option>
-						<option value="may">May</option>
-						<option value="june">June</option>
-						<option value="july">July</option>
-						<option value="aug">Augest</option>
-						<option value="sep">September</option>
-						<option value="oct">Octobor</option>
-						<option value="nov">November</option>
-						<option value="dec">December</option>
-					</select>
-				</div>
-			</div>
-			<div class="space float">
-				<label for="type_of_membership">Type Of Membership</label>
-				<div>
-					<select name="type_of_membership" id="TOM" class="long">
-						<option value="F">F</option>
-						<option value="S">S</option>
-						<option value="T">T</option>
-						<option value="B">B</option>
-					</select>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-			
-		<div>
-			<div class="space float">
-				<label for="address">Address</label>
-				<div>
-					<input type="text" name="address" class="long" id="address">
-					<div class="error5">empty</div>
-				</div>
-			</div>
-			<div class="space float">
-				<label for="Membershipnumber">Membership Number</label>
-				<div>
-					<input type="number" name="Membershipnumber" id="MBN" class="long">
-					<div class="error6">invalid</div>
-				</div>
-			</div>
-			<div class="space float">
-		 		<button class="ui primary button" id="button">Save Record</button>
-			</div>
-			<div class="clear"></div>
-		</div>	
-	</div>
+      <div>
+         <div class="space float">
+            <label for="SUB">SUB</label>
+            <div>
+               <select name="SUB" id="SUB" class="long">
+                  <option value="">Please Choose An Option</option>
+                  <option value="jan">January</option>
+                  <option value="feb">February</option>
+                  <option value="mar">March</option>
+                  <option value="apr">April</option>
+                  <option value="may">May</option>
+                  <option value="june">June</option>
+                  <option value="july">July</option>
+                  <option value="aug">Augest</option>
+                  <option value="sep">September</option>
+                  <option value="oct">Octobor</option>
+                  <option value="nov">November</option>
+                  <option value="dec">December</option>
+               </select>
+            </div>
+         </div>
+         <div class="space float">
+            <label for="TOM">Type Of Membership</label>
+            <div>
+               <select name="type_of_membership" id="TOM" class="long" value=""> 
+                  <option value="">Please Choose An Option</option>
+                  <option value="F">F</option>
+                  <option value="S">S</option>
+                  <option value="T">T</option>
+                  <option value="B">B</option>
+               </select>
+            </div>
+         </div>
+         <div class="clear"></div>
+      </div>
+         
+      <div>
+         <div class="space float">
+            <label for="Address">Address</label>
+            <div>
+               <input type="text" name="Address" class="long" id="Address" value="">
+            </div>
+         </div>
+         <div class="space float">
+            <label for="MBN">Membership Number</label>
+            <div>
+               <input type="number" name="MBN" id="MBN" class="long" value="">
+            </div>
+         </div>
+         <div class="space float">
+            <button class="ui primary button" id="button">Save Record</button>
+         </div>
+         <div class="clear"></div>
+      </div>   
+   </div>
+
 </body>
 </html>

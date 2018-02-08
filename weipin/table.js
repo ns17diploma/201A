@@ -20,8 +20,8 @@ function htmlTable(member){
 							'<td>' + member[i].Join_Date + '</td>'+
 							'<td>' + member[i].First_Name + '</td>'+
 							'<td>' + member[i].Last_Name + '</td>'+
-							'<td>' + member[i].Birth + '</td>'+
-							'<td>' + member[i].Sex + '</td>'+
+							'<td>' + member[i].Date_of_Birth + '</td>'+
+							'<td>' + member[i].Gender + '</td>'+
 							'<td>' + member[i].Address + '</td>'+
 							'<td>' + member[i].Postcode + '</td>'+
 							'<td>' + member[i].Type_of_Membership + '</td>'+
@@ -34,8 +34,8 @@ function htmlTable(member){
 					'<th>' + 'Join_Date' + '</th>' +
 					'<th>' + 'First_Name' + '</th>' +
 					'<th>' + 'Last_Name' + '</th>' +
-					'<th>' + 'Birth' + '</th>' +
-					'<th>' + 'Sex' + '</th>' +
+					'<th>' + 'Date_of_Birth' + '</th>' +
+					'<th>' + 'Gender' + '</th>' +
 					'<th>' + 'Address' + '</th>' +
 					'<th>' + 'Postcode' + '</th>' +
 					'<th>' + 'Type_of_Member' + '</th>' +
