@@ -29,7 +29,6 @@ class Start_Up{
 	}
 
 	Record(){
-		console.log(answer)
 		var json = this.Read_File('jsfile.json');
 		json.push();
 		jsf.writeFileSync('jsfile.json',json);  
