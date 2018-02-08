@@ -39,6 +39,7 @@ class Validate{
             else{
                 result = true
                 E.Clear('#First_Name')
+                return true
             }
             return result
         }
@@ -84,7 +85,7 @@ class Validate{
 
         CheckDOB(){
             var DOB = this.DOB
-            if (DOB.length != 10) {
+            if (DOB.length !== 10 || DOB == "") {
                 result = false
                 E.ShowError('#DOB','DOB Invalid')
             }else{
@@ -93,20 +94,10 @@ class Validate{
             }
             return result
         }
-        CheckD(){
 
-            if(this.JD<this.DOB){
-                result = false
-                E.ShowError('#JD','JD Invalid')
-            }else{
-                result = true
-                E.Clear('#JD')
-            }
-            return result
-        }
         CheckJD(){
             var jd = this.JD
-            if (jd.length != 10) {
+            if (jd.length !== 10 || jd == "") {
                 result = false
                 E.ShowError('#JD','Invalid Join Date')
             }
@@ -115,6 +106,30 @@ class Validate{
                 E.Clear('#JD')
             }
             return result
+        }
+
+        CheckD(){
+
+            if( this.JD < this.DOB){
+                result = false
+                E.ShowError('#JD','JD Invalid')
+            }else{
+                result = true
+                E.Clear('#JD')
+            }
+            return result
+        }
+
+        CheckTwoD(){
+            var jd = this.JD
+            var dob = this.DOB
+            if (jd.length == 10 && dob.length == 10) {
+                if (dob < jd) {
+                    E.ShowError('#JD','Invalid Join Date')
+                }else{
+                    E.Clear('#JD')
+                }
+            }
         }
 
         CheckSUB(){

@@ -21,22 +21,13 @@ $(function(){
 	    let V = new Validator(M.return_this());
 
 	    /* Call Validate Function */
-		V.CheckD()
-	    V.CheckFN()
-	    V.CheckLN()
-	    V.CheckPC()
-	    V.CheckG()
-	    V.CheckDOB()
-		V.CheckSUB()
-		V.CheckTOM()
-		V.CheckAddr()
-		V.CheckMBN()
-		V.CheckJD()
 
-		if (result === true) {
+		if ( V.CheckFN() === true && V.CheckLN() === true && V.CheckPC() === true && V.CheckG() === true && V.CheckDOB() === true
+		&& V.CheckSUB() === true && V.CheckTOM() === true && V.CheckAddr() === true && V.CheckMBN() === true && V.CheckJD() === true
+		&& V.CheckTwoD() == true) {
 			alert('Completed');
-			ST.Record(M.return_this())
-
+/*			ST.Record(M.return_this())
+*/
 		}else{
 			alert('Error');
 		}
