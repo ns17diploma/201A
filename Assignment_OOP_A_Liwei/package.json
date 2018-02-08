@@ -5,8 +5,7 @@
   "dependencies": {
     "chunk": "^0.0.2",
     "jquery": "^3.2.1",
-    "jsonfile": "^4.0.0",
-    "semantic-ui-css": "^2.2.12"
+    "jsonfile": "^4.0.0"
   },
   "devDependencies": {},
   "scripts": {
