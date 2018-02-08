@@ -22,7 +22,7 @@ class ValidateManager {
   // If empty is true, call EM.showError() and pass that id name and message
   // Else call EM.removeError and pass that id name
   lengthValidate(id, limit) {
-    if (id === "" || id.length !== limit || Number(id) !== NaN) {
+    if (id === "" || id.length !== limit || Number(id) === NaN) {
       this.em.showError(this.allID[0], this.allID[0] + " must be " + limit + " digits!")
     } else {
       this.em.removeError(this.allID[0])
