@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<script src="jquery-3.2.1.min.js">"></script>
-	<link rel="stylesheet" href="assignment1.css">
-	<link rel="stylesheet" href="semantic.min.css">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="jquery-3.2.1.min.js">"></script>
+  <link rel="stylesheet" href="assignment1.css">
+  <link rel="stylesheet" href="semantic.min.css">
 </head>
 <body>
-	<h1>Members table</h1>
-	<div id="content">
-		<table class="ui selectedtable inverted ui blue table " id="members-table">
-		<thead>
-			<tr>	
-				<th>Membership Number</th>
-				<th>Gender .</th>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Date of Birth</th>
-				<th>Join Date</th>
-				<th>Address</th>
-				<th>Type of Membership</th>
-				<th>Subscription Due Month</th>
-				<th>Postcode</th>
-			</tr>
-		</thead>
-			<tbody>
-			</tbody>
+  <h1>Members table</h1>
+  <div id="content">
 
-		</table>
-			<div class="ui hidden divider"></div>
-    		<div class="ui pagination menu" id="members-pagination"></div>
-			</div>
-			<div class="ui hidden divider"></div>
-			<div class="ui hidden divider"></div>
-			<div class="ui hidden divider"></div>
-			<div class="ui hidden divider"></div>
-</body>
-<script src='table.js'></script>
+    <!-- 
+      START VIEWING OF MEMBERS INFO
+    -->
+    <table class="ui selectedtable inverted ui blue table " id="members-table">
+    <thead>
+      <tr>    
+        <th>Membership Number</th>
+        <th>Gender .</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Join Date</th>
+        <th>Address</th>
+        <th>Type of Membership</th>
+        <th>Subscription Due Month</th>
+        <th>Postcode</th>
+      </tr>
+    </thead>
+      <tbody>
+      </tbody>
+
+    </table>
+    <div class="ui hidden divider"></div>
+
+    <!-- 
+      PAGINATION FOR 10 RECORDS IN A PAGE
+     -->
+    <div class="ui pagination menu" id="members-pagination"></div>
+    </div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <script src='table.js'></script>
+  </body>
 </html>
