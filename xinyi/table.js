@@ -1,6 +1,6 @@
 
 var jsonfile = require('jsonfile')
-var file = 'jsfile.json'
+var file = 'members.json'
 var $ = require('jquery');
 var chunk = require('chunk')
 
@@ -20,12 +20,11 @@ $(function(){
   }
 });
 
-
 function make_table(members){
 	var html_inside_table=""
 	for(var i in members){
 		html_inside_table = html_inside_table+'<tr><td>'+members[i].Membership_Number+'</td>'+
-						'<td>'+members[i].First_name+'</td>'+
+						'<td>'+members[i].First_Name+'</td>'+
 						'<td>'+members[i].Last_name+'</td>'+
 						'<td>'+members[i].Address+'</td>'+
 						'<td>'+members[i].Postcode+'</td>'+
@@ -54,19 +53,15 @@ function make_table(members){
 	$('section#content').html(html_table);
 }
 
-function create_pagination(pages) {
+function create_pagination(pages){
+	$('#members-pagination').html('')
 
-  $('#members-pagination').html('')
-
-  for (var i = 0; i < pages.length; i++) {
-    let item_html = `<span class="item" data-page="${i}">${i+1}</span>`
-    $('#members-pagination').append(item_html)
-  }
-  $('#members-pagination span.item').click(function() {
-    $this = $(this)
-    make_table(pages[$this.data('page')]);
-  });
+  		for (var i = 0; i < pages.length; i++) {
+    		let item_html = `<span class="item" data-page="${i}">${i+1}</span>`
+    		$('#members-pagination').append(item_html)
+  		}
+  		$('#members-pagination span.item').click(function() {
+   		 $this = $(this)
+   		 make_table(pages[$this.data('page')]);
+  		});
 }
-
-
-	
