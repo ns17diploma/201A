@@ -11,7 +11,6 @@ class Validate{
     constructor(obj){
         this.obj = obj
         this.First_Name = obj['First_Name']
-        console.log(this.First_Name)
         this.Last_Name = obj['Last_Name']
         this.Gender = obj['Gender']
         this.PostCode = obj['PostCode']
