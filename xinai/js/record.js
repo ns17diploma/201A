@@ -2,10 +2,10 @@ var jsf = require('jsonfile');
 var filename = 'jsfile.json'
 var chunk = require ('chunk')
 var $ = require('jquery');
-
+const JsonFileManager = require('./managers/JsonFileManagers')
 
 $(function(){
-
+const jfm = new JsonFileManager()
   let members = jsf.readFileSync(filename)
 
   if (members.length > 0) {
@@ -22,39 +22,38 @@ $(function(){
 
 function make_table(members)
 {
-	var html_insert_table = ""
-	for (var i in members) {
+  var html_insert_table = ""
+  for (var i in members) {
 
-		html_insert_table = html_insert_table +
-							'<tr><td>' + members[i].Membership_Number+ '</td>' + 
-							'<td>' + members[i].Sex + '</td>' +
-							'<td>' + members[i].First_Name + '</td>' + 
-							'<td>' + members[i].Last_Name + '</td>' +
-	 						'<td>' + members[i].Address+ '</td>' + 
-	 						'<td>' + members[i].Postcode + '</td>' + 
-	 						'<td>' + members[i].Date_of_birth + '</td>' + 
-	 						'<td>' + members[i].Join_Date + '</td>' +
-	 						'<td>' + members[i].Type_of_Membership+ '</td>' + 
-	 						'<td>' + members[i].Subscription_Due_Month + '</td>' +'</tr>'; 
+    html_insert_table = html_insert_table +
+              '<tr><td>' + members[i].Membership_Number + '</td>' + 
+              '<td>' + members[i].Sex + '</td>' +
+              '<td>' + members[i].First_Name + '</td>' + 
+              '<td>' + members[i].Last_Name + '</td>' +
+              '<td>' + members[i].Address + '</td>' + 
+              '<td>' + members[i].Postcode + '</td>' + 
+              '<td>' + members[i].Date_of_birth + '</td>' + 
+              '<td>' + members[i].Join_Date + '</td>' +
+              '<td>' + members[i].Type_of_Membership + '</td>' + 
+              '<td>' + members[i].Subscription_Due_Month + '</td>' +'</tr>'; 
+  }
 
-	}
+  var html_table = '<table>' + 
+            '<tr>' + 
+              '<th>'+'Membership_Number'+'</th>'+
+              '<th>'+'Sex'+'</th>'+
+              '<th>'+'First_Name'+'</th>'+
+              '<th>'+'Last_Name'+'</th>'+
+              '<th>'+'Address'+'</th>'+
+              '<th>'+'Postcode'+'</th>'+
+              '<th>'+'Date_of_birth'+'</th>'+
+              '<th>'+'Join_Date'+'</th>'+
+              '<th>'+'Type_of_Membership'+'</th>'+
+              '<th>'+'Subscription_Due_Month'+'</th>'+
+            '</tr>'+
+              html_insert_table + '</table>';
 
-	var html_table = '<table>' + 
-						'<tr>' + 
-							'<th>'+'Membership_Number'+'</th>'+
-							'<th>'+'Sex'+'</th>'+
-							'<th>'+'First_Name'+'</th>'+
-							'<th>'+'Last_Name'+'</th>'+
-							'<th>'+'Address'+'</th>'+
-							'<th>'+'Postcode'+'</th>'+
-							'<th>'+'Date_of_birth'+'</th>'+
-							'<th>'+'Join_Date'+'</th>'+
-							'<th>'+'Type_of_Membership'+'</th>'+
-							'<th>'+'Subscription_Due_Month'+'</th>'+
-						'</tr>'+
-							html_insert_table + '</table>';
-
-	$('section#content').html(html_table);
+  $('section#content').html(html_table);
 };
 
 function create_pagination(pages) {

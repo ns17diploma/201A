@@ -14,53 +14,58 @@
   </div>
   <div class="ui text container" id="container">
     <h1 style="text-align: center;">Member Form</h1>
-    <div class="ui pointing below basic red label error-message" id="error03">
-      <label>Form is not complete</label>
-    </div>
+    
+    <div class="ui error message" id="error01">
+          <label style="text-align: center;" class="header">Form is not complete</label>
+        </div>
+        <div class="ui success message" id="error00">
+          <label style="text-align: center;" class="header">Success</label>
+        </div>
     <div class="message-box"></div>
     <div class="ui hidden divider"></div>
     <div class="two fields">
       <div class="field">
         <label>Membership Number</label>
-        <input id="input-membership" class="input" value="137672" type="number">  
-        <div class="ui pointing basic red label error-message" id="error01">
-          <label>Membership Number is not a valid modulus 11 number</label>
-        </div>
-     <div class="ui pointing basic red label error-message" id="error0">
-        <label>Membership Number is not a valid</label>
-    </div>
-        <div class="ui pointing basic red label error-message" id="error02">
-          <label>Membership Number is not 6 digits</label>
-        </div>
+        <!--THIS IS LET THE MEMBERSHIP NUMBER IS NO NUMERIC -->
+        <input id="input-membership" class="input" type="number">  
+        
       </div>
       <div class="field">
         <label>Type of Membership</label>
         <select class="ui dropdown input-membership-type" name='type' id="input-membership-type">
+          <option></option>
           <option value="F">F</option>
           <option value="S">S</option>
           <option value="T">T</option>
           <option value="B">B</option>
         </select>
+        <!--THIS IS LET THE MEMBERSHIP NUMBER MUST BE F,S,T OR B -->
+        
       </div>
     </div>
     <div class="two fields">
       <div class="field">
         <label>First Name</label>
         <input id="input-name" class="input">
+        
       </div>
       <div class="field">
         <label>Last Name</label>
         <input id="input-last" class="input">
+       
       </div>
     </div>
     <div class="two fields">
          <div class="field">
         <label>Join Date</label>
-        <input id='jd' class="input" name='join-date' type="date" value="2017-01-03">
+        <input id='jd' class="input" name='join-date' type="date">
+        
+        
       </div>
       <div class="field">
         <label>Subscription Due Month</label>
         <select class="ui dropdown day" name='sub-due-month' id="day">
+          <option></option>
           <option value="Jan">January</option>
           <option value="Feb">February</option>
           <option value="Mar">March</option>
@@ -74,34 +79,41 @@
           <option value="Nov">November</option>
           <option value="Dec">December</option>
        </select>
+      
       </div>
     </div>
     <div class="three fields">
       <div class="field">
         <label>Sex</label>
+        <!--THIS IS LET SEX MUST BE M OR F -->
         <select class="ui dropdown" name="sex" id="sex">
+          <option></option>
           <option value="M">Male</option>
           <option value="F">Female</option> 
         </select>
+       
       </div>
       <div class="field">
         <label>Date Of Birth</label>
-        <input id='dob' class="input" name='dob' type="date" value="2000-11-11">
+        <input id='dob' class="input" name='dob' type="date">
+       
       </div>
           <div class="field">
               <label>Postcode</label>
-              <input id='Postcode' class="input" name='postalcode' type="text" value="83000">
+              <input id='Postcode' class="input" name='postalcode' type="text">
+           
             </div>
         </div>
       <div class="field">
               <label>Address</label>
-              <input class="input" id='address1' name='address01' type="text" value="No 16050 ">
+              <input class="input" id='address1' name='address01' type="text">
           </div>
           <div class="field">
-              <input class="input" id='address2' name='address02' type="text" value="Jalan Camar 11">
+              <input class="input" id='address2' name='address02' type="text">
           </div>
           <div class="field">
-              <input class="input" id='address3' name='address03' type="text" value="Kulai">
+              <input class="input" id='address3' name='address03' type="text">
+             
           </div>
       </div>
       <div class="ui hidden divider"></div>

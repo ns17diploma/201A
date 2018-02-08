@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="semantic.min.css">
-  <link rel="stylesheet" href="assignment1.css">
+  <link rel="stylesheet" href="index.css">
   <title>MEMBER FORM</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
   <section class="marginleft">
 
   <div class="ui form">
-    <div class="four fields">
+    <div class="three fields">
       <div id="errormembership" class="field">
         <label>Membership Number</label>
         <input id="check" class="common1 input_membershipnumber membership" placeholder="Membership Number" required="true" type="number">
@@ -33,38 +33,40 @@
 
 
   <div class="ui form">
-    <div class="four fields">
+    <div class="three fields">
       <div id="errorfirstname" class="field">
         <label>First Name</label>
         <input id="firstname" class="common input_firstname" placeholder="First Name" type="text">
-        <label class="errormassage">Please Input your FirstName & Cannot Input Number</label>
+        <label class="errormassage">Please Input your FirstName </label>
+        <label class="errormassage8">Cannot Input Number</label>
       </div>
       <div id="errorlastname" class="field">
         <label>Last Name</label>
         <input id="lastname" class="common input_lastname" placeholder="Last Name" type="text">
-        <label class="errormassage2">Please Input your LastName & Cannot Input Number</label>
+        <label class="errormassage2">Please Input your LastName </label>
+        <label class="errormassage9">Cannot Input Number</label>
       </div>
     </div>
   </div>
 
   <div class="ui form">
-    <div class="four fields">
+    <div class="three fields">
       <div id="errordate" class="field">
         <label>Date of Birth</label>
-        <input id="dateofbirth" class="common input_date" placeholder="" type="date">
-        <label class="errormassage8">Please Input your date of bitrh & Cannot Input Number</label>
+        <input id="dateofbirth" class="common input_date" placeholder="" max="2018-12-31" type="date">
+        <label class="errormassage5">Invalid date of birth</label>
       </div>
       <div id="errorjoin" class="field">
         <label>Join Date</label>
-        <input id="joindate" class="common input_joindate" placeholder="" type="date">
-        <label class="errormassage9">Please Input your join date & Cannot Input Number</label>
+        <input id="joindate" class="common input_joindate" placeholder="" max="2018-12-31" type="date">
+        <label class="errormassage6">Invalid join date</label>
       </div>
     </div>
   </div>
 
 
   <div class="ui form">
-    <div class="four fields">
+    <div class="three fields">
       <div class="field">
         <label>Subscription Due Month</label>
         <select class="input_subscription" type="text">
@@ -104,19 +106,39 @@
   </div>
 
     <div class="ui form">
-      <div class="four fields">
+      <div class="three fields">
         <div id="errorpostcode" class="field">
           <label>Postcode</label>
           <input id="postcodeerror" class="common input_postcode" placeholder="#86000" type="number">
         <label class="errormassage4">Please Input your postcode</label>
+        <label class="errormassage10">Postcode is not 5 digits</label>
         </div>
       </div>
     </div>
 
-  <button class="save button" type="submit">Save  Record</button>
-  <button class="cancel button">Cancel</button>
-    <label class="inputcheck">Please check your form</label>
   </section>
+  <section class="saveplace">
+    
+  <button id="myBtn" class="save button" type="submit" >Save  Record</button>
+  <button class="cancel button">Cancel</button>
+  <br><br>
+    <label class="inputcheck">Please check your form</label>
+  <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" onclick="clickSpan()">&times;</span>
+        <h2>Complete</h2>
+      </div>
+      <div class="modal-body">
+        <p>Completle Submit The Form</p>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </section>
+
   <script src="index.js"></script>
 </body>
 </html>

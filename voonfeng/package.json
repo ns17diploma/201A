@@ -7,5 +7,12 @@
     "start": "electron ."
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chunk": "0.0.2",
+    "electron": "^1.7.10",
+    "jquery": "^3.2.1",
+    "jsonfile": "file:jsonfile",
+    "node": "^9.3.0"
+  }
 }

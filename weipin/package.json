@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "chunk": "0.0.2",
+    "file-system": "^2.2.2",
     "jquery": "^3.2.1",
     "semantic": "0.0.1",
     "semantic-ui": "^2.2.13"

@@ -1,30 +1,32 @@
-
-let jsf = require('jsonfile');
-var filename='jsfile.json'
+var fs = require('fs');
 var $ = require('jquery');
-var jQuery = $;
-var chunk = require('chunk');
+
+const JsonFileManager = require ('./managers/JsonFileManager');
+const Validator = require ('./managers/Validator');
+const Member = require ('./managers/Member');
+const ViewManager = require ('./managers/ViewManager');
+let allError = []
+
+const jfm = new JsonFileManager()
 
 $(function(){
-	$('#error0').hide();
+
 	$('#error01').hide();
-	$('#error02').hide();
-	$('#error03').hide();
-	
-	var $result = true
-  	$('#button').click(function(){
-  		checkValidate()
-		check()
-    	if ($result === true) {
-    	checkform();
-    	}
-    	else {
-    		$result = false
-   		}
-  	})
+
+	$('.error-message').each(function(){
+		$this= $(this)
+		allError.push($this.attr('id'))
+	})
+
+	let vm = new ViewManager()
+	const validator = new Validator()
+
 
 	$('#input-membership').on('keyup',function(){
 		
+		//THIS IS TO LET MEMBERSHIP NUMBER NOT LESS THAN 6 DIGITS
+		vm.clear();
+
 		var x=this.value;
 		var y=x.toString();
 		if (y.length>5){
@@ -33,96 +35,67 @@ $(function(){
 		}
 
     	if (y.length < 6) {
-    		error_label('#input-membership',$('#error03').show())	
+    		vm.errorMessage("#input-membership", "Membership Number was not 6 digits");
         	return false;
     	}
-		else{
-			reroo_label('#input-membership',$('#error03').hide())
-			$return = true
-		}
+    	else { 
+        vm.removeError("#input-membership"); 
+        //$('#error04').hide();
+        return true;
+      }
 	})
 
-	function checkform(){
-		var obj = {
-			Membership_Number:$('#input-membership').val(),
-			First_name:$('#input-name').val(),
-			Last_name:$('#input-last').val(),
-			Address:[$('#address1').val(),$('#address2').val(),$('#address3').val()],
-			Postcode:$('#Postcode').val(),
-			Sex:$('#sex').val(),
-			Date_of_birth:$('#dob').val(),
-			Join_Date:$('#jd').val(),
-			Type_of_membership:$('#input-membership-type').val(),
-			Subscription_Due_Month:$('#day').val()
-		} 
-	
-		var arr=jsf.readFileSync(filename);
-		console.log(arr)
-		arr.push(obj);
-		jsf.writeFileSync(filename,arr, {spaces:2});
-	};
 
-	function check(){
-		$('input').each(function(){
-			let input = $(this)
-			if (input.val() === ""){
-				error_label('#message-box',$('#error03').show())
-				$result=false
-			}
-			else{
-				$result=true
-			}
-			return $result
-		}) 
-	}
+  	$('#button').click(function(){
+
+  		vm.clear();
+  		
+  		var member = new Member(
+  			$('#input-membership').val(),
+  			$('#input-name').val(),
+  			$('#input-last').val(),
+  			$('#address1').val(),
+  			$('#Postcode').val(),
+  			$('#sex').val(),
+  			$('#dob').val(),
+  			$('#jd').val(),
+  			$('#input-membership-type').val(),
+  			$('#day').val()
+  		)
+
+  		// console.log(validator.checkValidate(member))
+		// console.log(validator.check(member))
+		console.log(validator.firstname(member))
+		console.log(validator.lastname(member))
+		console.log(validator.joinDate(member))
+		console.log(validator.birth(member))
+		console.log(validator.postcode(member)) 
+		console.log(validator.address(member))
+		console.log(validator.membership(member))
+		console.log(validator.day(member))
+		console.log(validator.sex(member))
+		console.log(validator.compare(member))
+
+    	if (validator.checkValidate(member) === true && 
+    		validator.firstname(member) === true && validator.lastname(member) === true && 
+			validator.birth(member) === true && validator.joinDate(member) === true && 
+			validator.postcode(member)  === true && validator.address(member) === true && 
+			validator.membership(member) === true && validator.day(member) === true && 
+			validator.sex(member) === true && validator.compare(member) === true ) {
+
+    		$('#error00').show();
+
+    		$('#error01').hide();
+	  	    jfm.saveMember(member);
+	    	console.log('success')
+
+    	}
+
+    	else {
+    		$('#error01').show();
+    		$('#error00').hide();
+    	    console.log('error')
+   		}
+	})
   	
 })
-	function checkValidate()
-	{  
-	  	// modulus 11
-	  	let x = $('#input-membership').val();		
-	  	let y = x.toString();
-	  	let z = 0;
-	  	
-	  	// if (y.length !== 6) {
-	  	// 	$result = false
-	  	// 	return false;
-	  	// }
-		// else{
-	  		for(var i = 0; i< y.length; i++){
-	    		let l = 6 - i;
-	    		z += Number(y[i]) * l;	
-			}
-	  		if ((z % 11) !== 0) {
-	    		error_label('#input-membership',$('#error01').show())
-	    		$result = false
-	 		}
-	 		else if ((z % 11) === 0 || y.length === 6){
-	 			$('#input-membership').parent().removeClass('error')
-	 			reroo_label('#input-membership',$('#error01').hide())
-	 			$result = true
-	 		}
-	 		else {
-	 			reroo_label('#message-box',$('#error03').hide());
-	 			// reroo_label('#input-membership',$('#error01').hide());
-	 		}
-	  		return $result
-		// }
-	}
-
-
-/*****************************************/
-function error_label(input_id, message)
-{
-  let html=""
-  $(input_id).after(html);
-  $(input_id).closest('.field').addClass('error')
-
-}
-
-function reroo_label(input_id, message)
-{
-  let html=""
-  $(input_id).after(html);
-  $(input_id).closest('.field').removeClass('error')
-}
