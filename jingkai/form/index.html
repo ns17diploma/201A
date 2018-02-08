@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sport Club Member Form</title>
+  <link rel="stylesheet" href="semantic/semantic.min.css">
+  <script src="app/app.js"></script>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    #main {
+      width: 80vw;
+      margin: auto;
+    }
+    div[class*="Error"] {
+       color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Member Form</h1>
+  <form id="main" class="ui fluid form">
+  <div class="ui grid">
+    <div class="sixteen wide column">
+      Membership Number : <br>
+      <div class="ui input fluid">
+        <input type="text" id="Membership-number" class="getValue necessary">
+      </div>
+      <div class="sixteen wide column inputError"></div>
+    </div>              
+  </div>
+  <div class="ui grid">
+    <div class="eight wide column">
+      First Name : <br>
+      <div class="ui input fluid">
+        <input type="text" id="First-name" class="getValue necessary">
+      </div>
+      <div class="eight wide column inputError"></div>
+    </div>
+    <div class="eight wide column">
+      Last Name : <br>
+      <div class="ui input fluid">
+        <input type="text" id="Last-name" class="getValue necessary">
+      </div>
+      <div class="eight wide column inputError"></div>
+    </div>
+  </div>
+  <div class="ui grid">
+    <div class="eight wide column">
+      Gender <br>
+      <div class="ui">
+        <select name="Gender" id="Gender" class="ui fluid search dropdown getValue necessary">
+          <option value="">Choose your gender</option>
+          <option value="M">M</option>
+          <option value="F">F</option>
+        </select>
+      </div>
+      <div class="eight wide column selectError"> </div>
+    </div>
+    <div class="eight wide column">
+      Date of Birth : <br>
+      <div class="ui input fluid">
+        <input type="date" id="Date-of-Birth" class="getValue necessary">
+      </div>
+      <div class="eight wide column selectError"></div>
+    </div>
+  </div>
+  <div class="ui grid">
+    <div class="sixteen wide column">
+      Address : <br>
+      <div class="ui input fluid">
+        <input type="text" id="Address" class="getValue necessary">
+      </div>
+      <div class="sixteen wide column inputError"></div>
+    </div>
+  </div>
+  <div class="ui grid">
+    <div class="eight wide column">
+      Postcode : <br>
+      <div class="ui input fluid">
+        <input type="text" id="Postcode" class="getValue necessary">
+      </div>
+      <div class="eight wide column inputError"></div>
+    </div>
+    <div class="eight wide column">
+      Join Date : <br>
+      <div class="ui input fluid">
+        <input type="date" id="Join-date" class="getValue necessary">
+      </div>
+      <div class="eight wide column inputError"></div>
+    </div>
+  </div>
+  <div class="ui grid">
+    <div class="eight wide column">
+        Type of Membership : <br>
+        <div class="ui">
+          <select id="Type-of-Membership" class="ui fluid search dropdown getValue necessary">
+            <option value="">Type of Membership</option>
+            <option value="F">F</option>
+            <option value="S">S</option>
+            <option value="T">T</option>
+            <option value="B">B</option>
+          </select>
+        </div>
+        <div class="eight wide column selectError"></div>
+    </div>
+    <div class="eight wide column">
+        Subscription Due Month <br>
+        <div class="ui">
+          <select id="Subscription-Due-Month" class="ui fluid search dropdown getValue necessary">
+            <option value="">Subscription Due Month</option>
+            <option value="JAN">JAN</option>
+            <option value="FEB">FEB</option>
+            <option value="MAR">MAR</option>
+            <option value="APR">APR</option>
+            <option value="MAY">MAY</option>
+            <option value="JUN">JUN</option>
+            <option value="JUL">JUL</option>
+            <option value="AUG">AUG</option>
+            <option value="SEP">SEP</option>
+            <option value="OCT">OCT</option>
+            <option value="NOV">NOV</option>
+            <option value="DEC">DEC</option>
+          </select>
+        </div>
+        <div class="eight wide column selectError"></div>
+      </div>
+  </div> <br>
+  <div class="two ui buttons">
+    <button id="submitBtn" class="ui primary button" type="button">Submit</button>
+    <input id="clearBtn" class="ui button" type="button" value="Clear">
+  </div>
+</form>
+</body>
+</html>
