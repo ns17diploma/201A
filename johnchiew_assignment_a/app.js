@@ -4,13 +4,13 @@ var chunk = require('chunk');
 var fs = require('fs');
 var file = 'data.json';
 var data = {};
+var JsonFileManager = require('./manager/JsonFileManager.js');
+var jfm = new JsonFileManager();
 var containerData = jsonfile.readFileSync(file);
 var Validator = require('./manager/Validator.js');
-var JsonFileManager = require('./manager/JsonFileManager.js');
 var ViewManager = require('./manager/ViewManager.js');
 var Member = require('./manager/Member.js');
 
-var jfm = new JsonFileManager();
 var vm = new ViewManager();
 
 /************************************************************
@@ -70,10 +70,12 @@ function pagination(pages) {
 }
 /*********************************************************************************/
 
+// Save Function
 var result = false;
 $('#saveRecord').on('click', function(){
-	var member = new Member (
-	 	$('#membership-number').val(),
+	
+  var member = new Member (
+    $('#membership-number').val(),
     $('#gender').val(),
     $('#first-name').val(),
     $('#last-name').val(),
@@ -83,11 +85,9 @@ $('#saveRecord').on('click', function(){
     $('#postcode').val(),
     $('#typeMember').val(),
     $('#due').val()
-		)
-	var valid = new Validator();
+    )
 
-	var jfm = new JsonFileManager()
-	
+  var valid = new Validator();
     valid.checkMember(member.transformObj()['membership_number']);
     valid.checkGender(member.transformObj()['gender']);
     valid.checkFirstName(member.transformObj()['first_name']);
@@ -99,7 +99,7 @@ $('#saveRecord').on('click', function(){
     valid.checkTypeOfMembership(member.transformObj()['type_member']);
     valid.checkSubscriptionDueMonth(member.transformObj()['due']);
 
-	if (
+  if (
       valid.checkMember(member.transformObj()['membership_number']) == true &&
       valid.checkGender(member.transformObj()['gender']) == true && 
       valid.checkFirstName(member.transformObj()['first_name']) == true && 
@@ -111,7 +111,7 @@ $('#saveRecord').on('click', function(){
       valid.checkTypeOfMembership(member.transformObj()['type_member']) == true && 
       valid.checkSubscriptionDueMonth(member.transformObj()['due']) == true 
       ) {
-				jfm.saveMember();
+        jfm.saveMember();
 				jfm.addMember();
 				alert('Form Complete');
 				location.reload();
