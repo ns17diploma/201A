@@ -4,7 +4,6 @@ const fs = require('fs');
 const filename = ('jsfile.json');
 const Validator = require('./validate.js')
 
-let answer = new Validator();
 
 /*
 * Createed Class StartUp
@@ -14,7 +13,7 @@ class Start_Up{
 	/* Call this function */
 	constructor(){
 		this.Ready();
-		// this.Read_File();
+		this.Read_File();
 		// this.Record();
 	}
 

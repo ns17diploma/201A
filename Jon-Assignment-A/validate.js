@@ -11,7 +11,6 @@ class Validate{
     constructor(obj){
         this.obj = obj
         this.First_Name = obj['First_Name']
-        console.log(this.First_Name)
         this.Last_Name = obj['Last_Name']
         this.Gender = obj['Gender']
         this.PostCode = obj['PostCode']
@@ -30,10 +29,14 @@ class Validate{
         */
         CheckFN(){
             var fn = this.First_Name
-            if (fn.length == "") {
+            if (fn.length == "" ) {
                 result = false
                 E.ShowError('#First_Name','First Name Was Empty')
-            }else{
+            }else if(!/^[a-zA-Z\s]+$/.test(fn)){
+                result = false
+                E.ShowError('#First_Name','First_Name Invalid')
+            }
+            else{
                 result = true
                 E.Clear('#First_Name')
             }
@@ -45,7 +48,11 @@ class Validate{
             if (LN.length == "") {
                 result = false
                 E.ShowError('#Last_Name','First Name Was Empty')
-            }else{
+            }else if(!/^[a-zA-Z\s]+$/.test(LN)){
+                result = false
+                E.ShowError('#Last_Name','Last_Name Invalid')
+            }
+            else{
                 result = true
                 E.Clear('#Last_Name')
             }
@@ -65,16 +72,11 @@ class Validate{
         }   
         CheckPC(){
             var PC = this.PostCode
-            if (PC.length != 5) {
+            if (PC.length !== 5 || !/^\d+$/.test(PC)) {
                  result = false
                 E.ShowError('#PostCode','Please Input Five Digit')
-            }else{
-                result = true
-                E.Clear('#PostCode')
             }
-            if (PC.length == "") {
-                E.ShowError ('#PostCode','PostCode Was Empty')
-            }else{
+            else{
                E.Clear('#PostCode')
             }
             return result 
