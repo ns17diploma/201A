@@ -2,6 +2,7 @@ class JsonFileManager {
   constructor(file) {
     this.file = file
     if (!fs.existsSync(this.file)) {
+      fs.mkdirSync(this.file)
       jsf.writeFileSync(this.file, [])
     }
   }
