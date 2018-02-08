@@ -14,33 +14,13 @@ body h1{
 .long{
 	width: 400px;
 }
-#address{
+#Address{
 	height: 80px;
 }
 .class{
 	clear: both;
 }
-.error0{
+.red{
 	color: red;
-}
-.error1{
-	color: red;
-}
-.error2{
-	color: red;
-}
-.error3{
-	color: red;
-}
-.error4{
-	color: red;
-}
-.error41{
-	color: red;
-}
-.error5{
-	color: red;
-}
-.error6{
-	color: red;
+	
 }
