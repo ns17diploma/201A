@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>List Members</title>
-    <link rel="stylesheet" type="text/css" href="../node_modules/semantic-ui-css/semantic.min.css">
 
-    <script src="../node_modules/semantic-ui-css/semantic.min.js"></script>
+<!-- REQUIRE SOURCE -->
+
+    <link rel="stylesheet" type="text/css" href="../node_modules/semantic-ui/semantic.min.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/app.css">
   </head>
   <body>
@@ -14,8 +16,13 @@
     <div class="ui hidden divider"></div>
     <div class="ui hidden divider"></div>
 
+<!-- MEMBER TABLE TITLE -->
+
     <div class="ui container" id="main-container">
      <h1>Members table</h1>
+
+<!-- MEMBER TABLE LIST -->
+
       <table id="members-table" class="ui very compact table">
         <thead>
           <tr>
@@ -38,7 +45,7 @@
       <div class="ui hidden divider"></div>
       <div class="ui pagination menu" id="members-pagination"></div>
     </div>
-    <script src="../javascript/app.js"></script>
+    
     <script src="../javascript/member_table.js"></script>
   </body>
 </html>

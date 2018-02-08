@@ -3,15 +3,22 @@
   <head>
   <meta charset="UTF-8">
   <title>Member Form</title>
-  <script src="node_modules/semantic-ui-css/semantic.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="node_modules/semantic-ui-css/semantic.min.css">
+
+<!-- REQUIRE SOURCE -->
+
+  <link rel="stylesheet" type="text/css" href="node_modules/semantic-ui/semantic.min.css">
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
 
+<!-- SPACE -->
+
       <div class="ui hidden divider"></div>
       <div class="ui hidden divider"></div>
       <div class="ui hidden divider"></div>
+
+<!-- MEMBER FORM TITLE -->
 
       <div class="ui text container">
       <h1 class="ui header">Member Form</h1>
@@ -21,12 +28,18 @@
         </div>
           <p>Fill out the form below to sign-up for a new account</p>
       </div>
+
+<!-- MEMBERSHIP NUMBER  -->
+
       <div class="ui form attached segment">
         <div class="two fields">
           <div class="field">
             <label>Membership Number</label>
             <input id="member_number" class="input_save" name='member_number' type="number" value="" placeholder="Membership Number">
           </div>
+
+<!-- TYPE OF MEMBERSHIP -->
+
           <div class="field">
             <label>Type of Membership</label>
             <select id="member_type" class="ui dropdown" name='type'>
@@ -37,11 +50,17 @@
             </select>
           </div>
         </div>
+
+<!-- JOIN DATE -->
+
         <div class="two fields">
           <div class="field">
             <label>Join Date</label>
             <input id="join_date" name='join-date' type="date" value="2001-01-01">
           </div>
+
+<!-- SUBSCRPTION DUE MONTH -->
+
           <div class="field">
             <label>Subscription Due Month</label>
             <select id="sub_month" class="ui dropdown" name='sub-month'>
@@ -61,16 +80,27 @@
             </select>
           </div>
         </div>
+
+<!-- FIRSTNAME -->
+
         <div class="two fields">
           <div class="field">
             <label>First Name</label>
             <input id="first_name" class="input_save" name='first-name' type="text" value="" placeholder="First Name">
           </div>
+
+
+
+<!-- LASTNAME -->
+
           <div class="field">
             <label>Last Name</label>
             <input id="last_name" class="input_save" name='last-name' type="text" value="" placeholder="Last Name">
           </div>
         </div>
+
+<!-- GENDER -->
+
         <div class="two fields">
           <div class="field">
             <label>Gender</label>
@@ -79,6 +109,9 @@
               <option value="F">Female</option>
             </select>
           </div>
+
+<!-- DATE OF BIRTH -->
+
           <div class="field">
             <label>Date of Birth</label>
             <input id="birth_day" class='' type="date" value="2001-01-01">
@@ -89,6 +122,8 @@
           <input id="address" class='input_save' name='address' type="text" placeholder="Address" value="">
         </div>
         
+<!-- POSTAL CODE -->
+
           <div class="field">
             <label>Postal code</label>
             <input id="postal_code" class='input_save' name='postalcode' type="number" placeholder="Postal Code" value="">
