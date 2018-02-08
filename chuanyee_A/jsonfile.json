@@ -1,0 +1,147 @@
+[
+  {
+    "membership_number": "135275",
+    "sex": "F",
+    "first_name": "Chuan Yee",
+    "date_of_birth": "1999-11-24",
+    "last_name": "Loh",
+    "join_date": "2017-12-31",
+    "address": "123, Jalan A, 77000, Jasin, Melaka",
+    "type_of_membership": "F",
+    "postcode": "77000",
+    "month": "Jan"
+  },
+  {
+    "membership_number": "123455",
+    "sex": "F",
+    "first_name": "Xin Yi",
+    "date_of_birth": "2000-11-11",
+    "last_name": "Low",
+    "join_date": "2017-10-30",
+    "address": "12,Taman Bahagia,81000,Kulai,Johor",
+    "type_of_membership": "S",
+    "postcode": "81000",
+    "month": "Mar"
+  },
+  {
+    "membership_number": "123455",
+    "sex": "F",
+    "first_name": "Xin Ai",
+    "date_of_birth": "2001-12-24",
+    "last_name": "Low",
+    "join_date": "2016-10-30",
+    "address": "12,Taman Bahagia,81000,Kulai,Johor",
+    "type_of_membership": "S",
+    "postcode": "81000",
+    "month": "Mar"
+  },
+  {
+    "membership_number": "123455",
+    "sex": "M",
+    "first_name": "Le John",
+    "date_of_birth": "1997-09-07",
+    "last_name": "Chiew",
+    "join_date": "2015-11-03",
+    "address": "122,Taman Lagenda,81000,Kluang",
+    "type_of_membership": "T",
+    "postcode": "81000",
+    "month": "January"
+  },
+  {
+    "membership_number": "135275",
+    "sex": "M",
+    "first_name": "Wei Pin",
+    "date_of_birth": "1997-05-07",
+    "last_name": "Yap",
+    "join_date": "2018-01-10",
+    "address": "32,Taman Matahari,81000,Batu Pahat",
+    "type_of_membership": "F",
+    "postcode": "81000",
+    "month": "May"
+  },
+  {
+    "membership_number": "135275",
+    "sex": "M",
+    "first_name": "Li Wei",
+    "date_of_birth": "1997-01-08",
+    "last_name": "Tan",
+    "join_date": "2015-04-08",
+    "address": "152,Taman Cendawan,81000,Kluang",
+    "type_of_membership": "B",
+    "postcode": "81000",
+    "month": "Sep"
+  },
+  {
+    "membership_number": "123455",
+    "sex": "M",
+    "first_name": "Kai Xuan",
+    "date_of_birth": "1999-05-07",
+    "last_name": "Tan",
+    "join_date": "2015-01-03",
+    "address": "122,Taman Daun,81000,Batu Pahat",
+    "type_of_membership": "T",
+    "postcode": "81000",
+    "month": "Jul"
+  },
+  {
+    "membership_number": "135275",
+    "sex": "M",
+    "first_name": "Jing Kai",
+    "date_of_birth": "1995-04-20",
+    "last_name": "Ng",
+    "join_date": "2013-01-06",
+    "address": "122,Taman Lagenda,81000,Johor",
+    "type_of_membership": "S",
+    "postcode": "81000",
+    "month": "January"
+  },
+  {
+    "membership_number": "123455",
+    "sex": "M",
+    "first_name": "Guo Yang",
+    "date_of_birth": "2001-03-10",
+    "last_name": "Lim",
+    "join_date": "2012-11-03",
+    "address": "122,Taman Lagenda,81000,Kluang",
+    "type_of_membership": "T",
+    "postcode": "81000",
+    "month": "January"
+  },
+  {
+    "membership_number": "123455",
+    "sex": "M",
+    "first_name": "Voon Feng",
+    "date_of_birth": "1998-01-17",
+    "last_name": "Kook",
+    "join_date": "2016-12-03",
+    "address": "12,Taman Lagenda,81000,Kluang",
+    "type_of_membership": "F",
+    "postcode": "81000",
+    "month": "Apr"
+  },
+  {
+    "membership_number": "123455",
+    "sex": "M",
+    "first_name": "Zhen Xing",
+    "date_of_birth": "1998-05-04",
+    "last_name": "Lui",
+    "join_date": "2018-12-31",
+    "address": "124,Jalan Lagenda,81000,Kulai",
+    "type_of_membership": "F",
+    "postcode": "81000",
+    "month": "Apr"
+  },
+  {
+    "membership_number": "135275",
+    "sex": "M",
+    "first_name": "Seng Hup",
+    "date_of_birth": "2001-05-04",
+    "last_name": "Loh",
+    "join_date": "2015-11-30",
+    "address": "JC 123, Taman Merbau Perdana,77000,Jasin,Melaka",
+    "type_of_membership": "T",
+    "postcode": "77000",
+    "month": "May"
+  }
+]
+
