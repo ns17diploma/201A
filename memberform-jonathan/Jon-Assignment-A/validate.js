@@ -32,6 +32,9 @@ class Validate{
             if (fn.length == "") {
                 result = false
                 E.ShowError('#First_Name','First Name Was Empty')
+            }
+            else if( !/^[a-zA-Z\s]+$/.test(fn)){
+                E.ShowError('#First_Name','First Name Error')
             }else{
                 result = true
                 E.Clear('#First_Name')
@@ -44,7 +47,12 @@ class Validate{
             if (LN.length == "") {
                 result = false
                 E.ShowError('#Last_Name','First Name Was Empty')
-            }else{
+            }
+            else if(!/^[a-zA-Z\s]+$/.test(LN)){
+                result = false
+                E.ShowError('#Last_Name','Last_Name Error')
+            }
+            else{
                 result = true
                 E.Clear('#Last_Name')
             }
@@ -64,16 +72,13 @@ class Validate{
         }   
         CheckPC(){
             var PC = this.PostCode
-            if (PC.length != 5) {
+            if (PC.length !== 5 || !/^\d+$/.test(PC)) {
                  result = false
-                E.ShowError('#PostCode','Please Input Five Digit')
+                E.ShowError('#PostCode','PostCode Invalid')
+
+          E.ShowError ('#PostCode','PostCode Was Empty')
             }else{
                 result = true
-                E.Clear('#PostCode')
-            }
-            if (PC.length == "") {
-                E.ShowError ('#PostCode','PostCode Was Empty')
-            }else{
                E.Clear('#PostCode')
             }
             return result 

@@ -167,7 +167,7 @@
     "join_date": "7/2/2018",
     "due_month": "Jan"
   },
-    {
+  {
     "f_name": "record 15",
     "l_name": "KaiXuan",
     "gender": "Male",
@@ -238,5 +238,29 @@
     "member_type": "F",
     "join_date": "7/2/2018",
     "due_month": "Jan"
+  },
+  {
+    "f_name": "jona",
+    "l_name": "asd",
+    "gender": "Male",
+    "bday": "0012-12-12",
+    "address": "sdasd",
+    "postcode": "12345",
+    "member_num": "135275",
+    "member_type": "F",
+    "join_date": "0012-12-12",
+    "due_month": "Jan"
+  },
+  {
+    "f_name": "jon",
+    "l_name": "as",
+    "gender": "Female",
+    "bday": "0021-12-12",
+    "address": "sad",
+    "postcode": "12121",
+    "member_num": "123455",
+    "member_type": "T",
+    "join_date": "0012-12-12",
+    "due_month": "Apr"
   }
 ]
