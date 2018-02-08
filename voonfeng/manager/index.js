@@ -6,6 +6,7 @@ let jsf = require('jsonfile');
     var valid = new Validator;
     const Member = require('./manager/Member.js')
     const jsonfilemanager = require('./manager/jsonfilemanager')
+   
 
     $(function(){
     	const jfm = new jsonfilemanager()
@@ -71,4 +72,3 @@ let jsf = require('jsonfile');
   
   })
 
-module.exports = hide
