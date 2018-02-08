@@ -1,119 +1,117 @@
-var jsf = require('jsonfile');
-var filename = 'jsfile.json';	
 var fs = require('fs')
-var $ = require('jquery');
+var $ = require('jquery')
+const JsonFileManager = require('./managers/JsonFileManagers')
+const Member = require('./managers/Member')
+const Validator = require('./managers/Validator')
+const ViewManager = require('./managers/ViewManager');
+let all_Error = []
 
 $(function(){ 
-	$('#error0').hide();
-	$('#error01').hide();
-	$('#error02').hide();
-	var $result = false
 
-	//save button
-	$('#save').click(function(){
-		verifyError()
-		validate()
-	 	if ($result === false || $('body *').hasClass('error')) {
-			console.log('ERROR')	
-		}
-		else {
-			submitform();
-			console.log("YES")
-		} 
-	})
- 
-	function verifyError() {
-		//input error
-		$('.input').each(function(){
-			$this = $(this)
-			if ($this.val() === "") {
-				$this.addClass('error')
-				error_label('#message-box', $('#error0').show())
-			} else {
-				$('#error0').hide()
-				$('body *').removeClass('error')
-				$result = true				
-			}
-			return $result
-		})
-	}
+  $('.error').each(function() {
+    $this = $(this)
+    all_Error.push($this.attr('id'))
+  })
+  let vm = new ViewManager();
+  const jfm = new JsonFileManager()
+  const validator = new Validator()
+  const member = new Member()
+  /* THIS CODE IS WHEN WE CLICK THE SAVE BUTTON IT WILL WORK */
 
-	$('#number1').on('keyup',function(){
-		let mn = $('#number1').val();
-		let ms = mn.toString();
-		if (ms.length > 6) {
-			var c = ms.substr((Number(ms.length)-6), 6);
-			$('#number1').val(c);
-		} 
-		else if (ms.length !== 6) {
-			error_label('#number1', $('#error02').show());
-		}
-		else if (ms.length === 6) {
-			no_error('#number1', $('#error02').hide());
-		}
-	})
+  $('#save').click(function(){
+    vm.clear();
+    var obj = new Member (
+    $('#number1').val(),
+    $('#sex').val(),
+    $('#first').val(),
+    $('#last').val(),
+    $('#address0').val(),
+    $('#post').val(),
+    $('#date1').val(),
+    $('#date2').val(),
+    $('#date2').val(),
+    $('#type').val(),
+    $('#due').val())
+    
+    let membership = $('#number1').val()
+    let sex = $('#sex').val()
+    let first = $('#first').val()
+    let last = $('#last').val()
+    let address = $('#address0').val()
+    let post = $('#post').val()
+    let date_of_birth = $('#date1').val()
+    let join_date = $('#date2').val()
+    let date = $('#date2').val()
+    let type = $('#type').val()
+    let due = $('#due').val()
 
-	function validate() {
-		let number = 0;
-		let mn = $('#number1').val();
-		let ms = mn.toString();
-		for(var i = 0; i< ms.length; i++){
-		    let x = 6 - i;
-		    number += Number(ms[i]) * x;
-		}
-		if ((number % 11) !== 0 || ms.length !== 6) {
-		    error_label('#number1', $('#error01').show())
-		    $result = false
-		}
-		
-		else if ((number % 11) === 0 && ms.length === 6) {
-			$('#error02').hide()
-		  	no_error('#number1', $('#error01').hide())	
-		  	$result = true
-		}
-		return $result
-	}
+    // validator.validate()  
+    validator.membership()
+    validator.date_of_birth()
+    validator.join_date()
+    validator.date()
+    validator.first()
+    validator.last()
+    validator.post()
+    validator.address()
+    validator.sex()
+    validator.type()
+    validator.due()
+    
+    if (validator.validate(obj) === true && validator.membership(obj) === true && validator.date(obj) === true && 
+        validator.date_of_birth(obj) === true && validator.join_date(obj) === true && validator.first(obj) === true && 
+        validator.last(obj) === true && validator.post(obj) === true && validator.sex(obj) === true && 
+        validator.type(obj) === true && validator.due(obj) === true && validator.address(obj) === true) {
+        $('#error00').show();
+        $('#error0').hide();
+        jfm.saveMember(obj);
+        console.log('success')
+      }
+      else {
+        console.log('error')
+        $('#error0').show();
+        $('#error00').hide();
+      }
+  })
+  
+  /* THIS CODE IS LET THE MEMBERSHIP NUMBER MUST BE 6 DIGITS AND NUMERIC*/ 
 
-	function submitform(){
+  $('#number1').on('keyup',function(){
+    vm.clear();
+      let mn = $('#number1').val();
+      let ms = mn.toString();
+      if (ms.length > 6) {
+        var c = ms.substr((Number(ms.length)-6), 6);
+        $('#number1').val(c);
+      } 
+      else if (!/\d/.test(ms)) {
+        vm.errorMessage('#number1', 'Membership Number was not numeric' )
+      }
+      else if (ms.length !== 6) {
+        vm.errorMessage('#number1', 'Membership Number was not 6 digits' )
+      }
+       
+      else if (ms.length === 6) {
+        vm.removeError('#number1')
+      }
+    })
+  
+  /* THIS CODE IS LET THE POSTCODE  MUST BE 5 DIGITS */
 
-		var obj = {
-				Membership_Number: $('#number1').val(),
-				Sex: $('#sex').val(),
-				First_Name: $('#first').val(),
-				Last_Name: $('#last').val(),
-				Address: [$('#address1').val(),$('#address2').val(),$('#address3').val()],
-				Postcode: $('#post').val(),
-				Date_of_birth: $('#date1').val(),
-				Join_Date:  $('#date2').val(),
-				Type_of_Membership: $('#sex2').val(),
-				Subscription_Due_Month: $('#due').val()
-		}
-
-		if (!fs.existsSync(filename)) {
-    		jsf.writeFileSync(filename, [])
-  		}		
-		var arr = jsf.readFileSync(filename);
-		arr.push(obj);
-		jsf.writeFileSync(filename,arr,{spaces: 1, EOL:'\r\n'});
-	}	
+  $('#post').on('keyup',function(){
+    vm.clear();
+      let mn = $('#post').val();
+      let ms = mn.toString();
+      if (ms.length > 5) {
+        var c = ms.substr((Number(ms.length)-5), 5);
+        $('#post').val(c);
+      } 
+      else if (ms.length !== 5) {
+       vm.errorMessage('#post','Postcode was not 5 digits')
+      }
+      else if (ms.length === 5) {
+        vm.removeError('#post')
+      }
+  })
+  
 });
-
-/**************************/
-
-//error
-function error_label(input_id, message)
-{
-
-  let themessage = "";
- 	$(input_id).after(themessage);
-  	$(input_id).closest('.field').addClass('error')
-}
-
-//no error
-function no_error(input_id, message)
-{
-
-  let themessage = "";
- 	$(input_id).after(themessage);
-  	$(input_id).closest('.field').removeClass('error')
-}
