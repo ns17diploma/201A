@@ -1,250 +1,70 @@
 let jsf = require('jsonfile');
 let fs = require('fs');
 let $ = require('jquery');
+let Validator = require('./managers/Validator.js');
+let ViewManager = require('./managers/ViewManager.js');
+let JsonFileManager = require('./managers/JsonFileManager.js');
+let Member = require('./models/Member.js');
 
-function error() {
+/*
+*
+LINE 17 CREATE AN OBJECT CALLED JsonFileManager.
+LINE 18 CREATE AN OBJECT CALLED Validator.
+LINE 20 RESULT IS A PART VALIDATE, IF A VALIDATION WILL PASS, THE 'RESULT' WILL PLUS ONE.
+*
+*/
 
-	$('.error').hide();
+var jsfm = new JsonFileManager();
+var valid = new Validator();
 
-	if (!fs.existsSync('jsfile.json')) {	
-		jsf.writeFileSync('jsfile.json', []);
-	}
-	
-}
-
-
-function saveRecord(){
-	var obj = {
-		Membership_Number: $('#membershipNumber').val(),
-		Join_Date: $('#joinDate').val(),
-		First_Name: $('#firstName').val(),
-		Last_Name: $('#lastName').val(),
-		Birth: $('#birth').val(),
-		Sex: $('#gender').val(),
-		Address: $('#address').val(),
-		Postcode: $('#postcode').val(),
-		Type_of_Membership: $('#typeOfMembership').val(),
-		Subscription_Due_Month: $('#due').val(),
-	}
-
-	function addMember(){
-
-		var arr = jsf.readFileSync('jsfile.json');
-		arr.push(obj);
-		jsf.writeFileSync('jsfile.json', arr, function (err){
-			console.error(err)
-		})
-
-	}
-	addMember()
-}
-
-var result = false;
-
-function detectError(){
-
-	var mn = $('#membershipNumber').val();
-	var mns = mn.toString();
-	var fn = $('#firstName').val();
-	var ln = $('#lastName').val();
-	var address = $('#address').val();
-	var postcode = $('#postcode').val();
-	var birth = $('#birth').val();
-	var joinDate = $('#joinDate').val();
-	var gender = $('#gender').val();
-	var due = $('#due').val();
-	var type = $('#typeOfMembership').val();
-
-	//membership-number
-	function detectmn() {
-
-		mnTotal = 0;
-		for (var i = 0 ; i < mns.length ; i++) {
-			let x = 6 - i;
-			mnTotal += Number(mns[i]) * x;
-		}
-	
-		if ( mn == "" || !/\d{6}/.test(mn) || mns.length !== 6 || (mnTotal % 11) !== 0) {
-			$('.mnError00').show();
-			result = false;
-		} else {
-			$('.mnError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-	//first-name
-	function detectfn() {
-		if ( fn == "") {
-			$('.fnError00').show();
-			result = false;
-		}
-		
-		else {
-			$('.fnError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-	//last-name
-	function detectln() {
-		if ( ln == "" ) {
-			$('.lnError00').show();
-			result = false;
-		}
-
-		else {
-			$('.lnError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-	//address
-	function detectAddress() {
-		if ( address == "" ) {
-			$('.addressError00').show();
-			result = false;
-		}
-	
-		else {
-			$('.addressError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-	//postcode
-	function detectPostcode() {
-		if ( postcode == "" || !/\d{5}/.test(postcode) || postcode.length !== 5) {
-			$('.postcodeError00').show();
-			result = false;
-		} else {
-			$('.postcodeError00').hide();
-			result = true
-		}
-		return result;
-	}
+var result = 0;
 
 
-	//gender
-	function detectGender() {
-		if ( gender == "" ) {
-			$('.genderError00').show();
-			result = false;
-		}
-		else {
-			$('.genderError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-
-	//due
-	function detectDue() {
-		if ( due == "" ) {
-			$('.dueError00').show();
-			result = false;
-		}
-		else {
-			$('.dueError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-
-	//type_of_membership
-	function detectType() {
-		if ( type == "" ) {
-			$('.typeError00').show();
-			result = false;
-		}
-		else {
-			$('.typeError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-
-	//date_of_birth
-	function detectBirth(){
-		if ( birth == "" || birth.length !== 10 ) {
-			$('.birthError00').show();
-			result = false;
-		}
-		else {
-			$('.birthError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-
-	//join_date
-	function detectJoin() {
-		if ( joinDate === "" || joinDate.length !== 10 ) {
-			$('.joinError00').show();
-			result = false;
-		}
-		else {
-			$('.joinError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-
-	//two_date
-	function twoDate() {
-		var checkBirth = birth.substr(0,4)
-		var checkJoin = joinDate.substr(0,4)
-		if ( Number(checkBirth) > Number(checkJoin)) {
-			$('.birthError00').show();
-			result = false;
-		}
-		else {
-			$('.birthError00').hide();
-			result = true;
-		}
-		return result;
-	}
-
-	if (birth == "" || joinDate == "") {
-		result = false
-	} else {
-		twoDate()
-	}
-
-	detectmn();
-	detectfn();
-	detectln();
-	detectAddress();
-	detectPostcode();
-	detectGender();
-	detectType();
-	detectDue();
-	detectBirth();
-	detectJoin();
-
-}
-
+/*
+*
+***LINES 34-70 DO SAVE BUTTON
+***LINE 35 IS CREATE AN OBJECT CALLED ViewManager
+***LINES 33-44 CREATE AN OBJECT CALLED Member, AND LINES 34-43 IS 
+   MEMBER_FORM'S INPUT, PASS INTO THE Member.
+***LINES 49-59 IS PASS Member's OBJ FROM transferMemberObj.
+***LINES 61-65 IF result EQUAL 11, WILL ALERT SUCCESS, SAVE RECORD AND RELOAD THE PAGE.
+***LINES 66-68 IF result NOT EQUAL 11, WILL ALERT PLEASE COMPLETE FORM.
+*
+*/
 $('#submitButton').on('click', function(){
-	detectError();
-	
-	if ( result == false ) {
-		alert('Please complete form');
-	}
-	else {
-		saveRecord();
-		$('.error').hide();
-	}
+  var vm = new ViewManager();
+  var member = new Member(
+    $('#membershipNumber').val(),
+    $('#joinDate').val(),
+    $('#firstName').val(),
+    $('#lastName').val(),
+    $('#birth').val(),
+    $('#gender').val(),
+    $('#address').val(),
+    $('#postcode').val(),
+    $('#due').val(),
+    $('#typeOfMembership').val()
+    );
+
+  valid.detectmn(member.transferMemberObj()['Membership_Number'])
+  valid.detectJoin(member.transferMemberObj()['Join_Date'])
+  valid.detectfn(member.transferMemberObj()['First_Name'])
+  valid.detectln(member.transferMemberObj()['Last_Name'])
+  valid.detectBirth(member.transferMemberObj()['Date_of_Birth'])
+  valid.detectGender(member.transferMemberObj()['Gender'])
+  valid.detectAddress(member.transferMemberObj()['Address'])
+  valid.detectPostcode(member.transferMemberObj()['Postcode'])
+  valid.detectDue(member.transferMemberObj()['Subscription_Due_Month'])
+  valid.detectType(member.transferMemberObj()['Type_of_Membership'])
+  valid.checkTwoDate(member.transferMemberObj()['Join_Date'], member.transferMemberObj()['Date_of_Birth'])
+  
+  if (result == 11 ) {
+    alert('Success');
+    jsfm.saveRecord(member.transferMemberObj());
+    location.reload();
+  }
+  else {
+    alert('Please_complete_form');
+  }
 
 })
-
-
-

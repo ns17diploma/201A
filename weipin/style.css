@@ -21,7 +21,7 @@ body{
 	margin-bottom: 20px;
 }
 
-.error{
+.errorLabel{
 	color: red;
 	font-size: 15px;
 }
