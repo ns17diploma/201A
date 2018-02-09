@@ -1,5 +1,4 @@
 ////REQUIRE SOURCE
-
 var fs = require('fs');
 var $ = require('jquery');
 const JsonFileManager = require('./OOP_Manager/JsonFileManager');
@@ -24,7 +23,8 @@ $('#clear_button').on('click', function(){
   $('#save_button').click(function(){
     
 ////VALIDATE VALUE   
-
+        validator.JoinDate()
+        validator.DateOfBirth()
         validator.MembershipNumber()
         validator.FirstName()
         validator.LastName()
@@ -42,7 +42,6 @@ $('#clear_button').on('click', function(){
         
 ////GET INFORMATION VALUE
 
-        
             var obj = new Member (
             $('#member_number').val(),
             $('#first_name').val(),
