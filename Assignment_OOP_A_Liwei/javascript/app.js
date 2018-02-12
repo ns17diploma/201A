@@ -1,4 +1,3 @@
-////REQUIRE SOURCE
 var fs = require('fs');
 var $ = require('jquery');
 const JsonFileManager = require('./OOP_Manager/JsonFileManager');
@@ -12,17 +11,21 @@ $(function(){
   const member = new Member()
   const validator = new Validator()
   
-////CLEAR BUTTON
+/**********************************************/  
+/*CLEAR BUTTON*/
 
 $('#clear_button').on('click', function(){
       vm.clear_button()
     })
 
-////SAVE BUTTON
+/**********************************************/
+/*SAVE BUTTON*/
 
   $('#save_button').click(function(){
     
-////VALIDATE VALUE   
+/**********************************************/
+/*VALIDATE VALUE*/  
+
         validator.JoinDate()
         validator.DateOfBirth()
         validator.MembershipNumber()
@@ -31,16 +34,20 @@ $('#clear_button').on('click', function(){
         validator.Address()
         validator.PostalCode()
 
-////ERROR MESSAGE
+/**********************************************/
+/*ERROR MESSAGE*/
 
       if ($('.field').hasClass('error')) {
        vm.validate_fail()
-////SUCCESS MESSAGE
+
+/**********************************************/
+/*SUCCESS MESSAGE*/
 
       } else {
         vm.validate_success()
         
-////GET INFORMATION VALUE
+/**********************************************/
+/*GET INFORMATION VALUE*/
 
             var obj = new Member (
             $('#member_number').val(),

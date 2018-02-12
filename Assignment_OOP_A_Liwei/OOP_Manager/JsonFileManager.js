@@ -1,5 +1,3 @@
-////REQUIRE SOURCE
-
 const fs = require('fs')
 const jsf = require('jsonfile')
 var file = 'members.json'
@@ -12,8 +10,9 @@ class JsonFileManager{
 		}
 
   	}
-	
-////PUSH VALUE TO JSON FILE
+
+/**********************************************/	
+/*PUSH VALUE TO JSON FILE*/
 
 	saveMembers(obj){
 		var member = this.getMember()

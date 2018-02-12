@@ -3,16 +3,16 @@ class ViewManager{
   constructor(){
 
   }
-
-////CLEAR BUTTON FUNCTION
+/**********************************************/
+/*CLEAR BUTTON FUNCTION*/
 
   clear_button(){
       $('.input_save').val('')
       $('.error_message').remove()
       $('.field').removeClass('error')
   }
-  
-////ERROR MESSAGE FUNCTION
+/**********************************************/
+/*ERROR MESSAGE FUNCTION*/
 
    error_message(input_id, message){
       let message_html = '<div class="ui pointing red label error_message">' +
@@ -21,15 +21,16 @@ class ViewManager{
       $(input_id).closest('.field').addClass('error')
     }
 
-////ERROR EFFECT FUNCTION
+/**********************************************/
+/*ERROR EFFECT FUNCTION*/
 
   remove_error_message(input_id){
       $('.error_message').remove()
       $(input_id).closest('.field').removeClass('error')
     }
 
-
-////Validate Fail
+/**********************************************/
+/*VALIDATE FAIL*/
 validate_fail(message){
        let upper_message = `
         <div class="ui negative message error-message">
@@ -42,7 +43,9 @@ validate_fail(message){
       `
        $('#message_box').html(upper_message)
     }
-////Vlidate Success
+
+/**********************************************/
+/*VALIDATE SUCCESS*/
 validate_success(message){
        let upper_message = `
         <div class="ui negative message success">

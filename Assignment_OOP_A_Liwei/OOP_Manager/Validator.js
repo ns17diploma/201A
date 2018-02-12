@@ -4,12 +4,12 @@ const $ = require('jquery')
 const ViewManager = require('./ViewManager')
 const vm = new ViewManager()
 class Validator {
-////
 
-//// VALIDATE JOIN DATE FORMAT CORRECT
+/*********************************************/
+/* VALIDATE JOIN DATE FORMAT CORRECT*/
 
     JoinDate(obj){
-      ////
+  
       if ($('#join_date').val().length >= 11 ) {
         vm.error_message('#join_date', 'Incorrect Date of Join Format');
       }else{
@@ -17,8 +17,8 @@ class Validator {
       }
     }
 
-//// VALIDATE DATE OF BIRTH FORMAT CORRECT 
-
+/**********************************************/
+/* VALIDATE DATE OF BIRTH FORMAT CORRECT */
     DateOfBirth(obj){
       if ($('#join_date').val() < $('#birth_day').val()) {
         vm.error_message('#join_date', 'Date Case Format is Incorrect');
@@ -34,8 +34,8 @@ class Validator {
       }
     }
     
-//// VALIDATE MEMBERSHIP NUMBER IS 6 DIGITS 
-
+/**********************************************/
+/* VALIDATE MEMBERSHIP NUMBER IS 6 DIGITS */ 
     MembershipNumber(obj){
       var modulus_eleven = 0;
       for(var i = 0; i<$('#member_number').val().length; i++){
@@ -54,8 +54,8 @@ class Validator {
        }
       }
 
-////VALIDATE FIRST NAME FORMAT IS CORRECT
-
+/**********************************************/
+/*VALIDATE FIRST NAME FORMAT IS CORRECT*/
     FirstName(obj){
       if ($('#first_name').val() === "" ) {
         vm.error_message('#first_name', 'First Name Case is Empty');
@@ -68,8 +68,9 @@ class Validator {
       }
     }
 }
-////VALIDATE FIRST NAME FORMAT IS CORRECT
 
+/**********************************************/
+/*VALIDATE FIRST NAME FORMAT IS CORRECT*/
     LastName(obj){
       if ($('#last_name').val() === "" ) {
         vm.error_message('#last_name', 'last Name Case is Empty');
@@ -83,9 +84,8 @@ class Validator {
     }
 }
 
-////VALIDATE ADDRESS FORMAT IS CORRECT
-
-
+/**********************************************/
+/*VALIDATE ADDRESS FORMAT IS CORRECT*/
     Address(obj){
 
         if ($('#address').val() === "" ) {
@@ -100,8 +100,8 @@ class Validator {
         }
       }
 
-////VALIDATE POSTALCODE NUMBER COULD NOT EMPTY
-
+/**********************************************/
+/*VALIDATE POSTALCODE NUMBER COULD NOT EMPTY*/
     PostalCode(obj){
       if ($('#postal_code').val() === "" ) {
         vm.error_message('#postal_code', 'Incorrect Postal Code Format');

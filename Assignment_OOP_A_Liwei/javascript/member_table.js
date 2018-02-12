@@ -1,12 +1,11 @@
-////REQUIRE SOURCE
-
 var app_js = './app.js';
 var chunk = require('chunk');
 var jsf = require('jsonfile');
 var $ = require('jquery');
 var file = 'members.json'
 
-////10 MEMBER PER PAGE
+/**********************************************/
+/*10 MEMBER PER PAGE*/
 
 $(function(){
 
@@ -26,7 +25,8 @@ $(function(){
 
 })
 
-////MEMBER TABLE VALUE
+/**********************************************/
+/*MEMBER TABLE VALUE*/
 
 function make_table(members)
 {
@@ -50,7 +50,8 @@ function make_table(members)
   }
 }
 
-////GET MEMBER TABLE PAGINATION NUMBER
+/**********************************************/
+/*GET MEMBER TABLE PAGINATION NUMBER*/
 
 function create_pagination(pages) {
 

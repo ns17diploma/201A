@@ -1,8 +1,8 @@
 var person = function(){
 	
 }
-
-////GET MEMBER DATA VALUE
+/**********************************************/
+/*GET MEMBER DATA VALUE*/
 
 class Member{
 
